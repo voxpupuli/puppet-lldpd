@@ -1,0 +1,15 @@
+#!/bin/bash
+
+##
+# This file is managed by Puppet!
+##
+# written by Tim 'bastelfreak' Meusel
+##
+
+lldpctl -f json > /tmp/lldp.json
+jq . /tmp/lldp.json > /dev/null 2>&1
+if [ $? == 0 ]; then
+  mv /tmp/lldp.json /opt/puppetlabs/facter/facts.d/lldp.json
+else
+  rm /tmp/lldp.json
+fi

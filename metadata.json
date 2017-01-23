@@ -1,0 +1,46 @@
+{
+  "name": "puppet-lldpd",
+  "version": "0.1.0",
+  "author": "Tim Meusel",
+  "summary": "installs, configures, and manages the marmoset service",
+  "license": "AGPL-3.0",
+  "source": "https://github.com/virtapi/puppet-lldpd",
+  "project_page": "https://github.com/virtapi/puppet-lldpd",
+  "issues_url": "https://github.com/virtapi/puppet-lldpd",
+  "description": "This is a nice module to manage lldpd",
+  "dependencies": [
+    {
+      "name": "camptocamp/systemd",
+      "version_requirement": ">=0.4.0 < 2.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Archlinux"
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "6.0",
+        "7.0"
+      ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "6.0",
+        "7.0"
+      ]
+    },
+    {
+      "operatingsystem": "Fedora",
+      "operatingsystemrelease": [
+        "24",
+        "25"
+      ]
+    }
+  ],
+  "requirements": [
+    { "name": "puppet", "version_requirement": ">= 4.8.0 < 5.0.0" }
+  ]
+}

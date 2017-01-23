@@ -1,0 +1,28 @@
+class lldpd::service {
+  if $lldpd::manage_service {
+    service{'lldpd':
+      ensure => 'running',
+      enable => true,
+    }
+  }
+  if $lldpd::manage_facts {
+    package{'jq':
+      ensure => 'present',
+    }
+    file{'/usr/local/bin/lldp2ctl':
+      ensure => 'file',
+      mode   => '0755',
+      source => "puppet:///modules/${module_name}/lldp2facts",
+    }
+    if $facts['systemd'] {
+      ::systemd::unit_file{'lldp2facts.service':
+       source => "puppet:///modules/${module_name}/lldp2facts.service",
+      }
+      ::systemd::unit_file{'lldp2facts.timer':
+       source => "puppet:///modules/${module_name}/lldp2facts.timer",
+      }
+    } else {
+      # legacy cron
+    }
+  }
+}
