@@ -9,10 +9,13 @@ class lldpd::service {
     package{'jq':
       ensure => 'present',
     }
-    file{'/usr/local/bin/lldp2ctl':
+    file{'/usr/local/bin/lldp2facts':
       ensure => 'file',
       mode   => '0755',
       source => "puppet:///modules/${module_name}/lldp2facts",
+    }
+    file{'/usr/local/bin/lldp2ctl':
+      ensure =>  'absent',
     }
     if $facts['systemd'] {
       ::systemd::unit_file{'lldp2facts.service':
