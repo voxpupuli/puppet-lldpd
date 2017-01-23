@@ -1,7 +1,7 @@
 class lldpd::repo {
   if $lldpd::manage_repo {
     if $facts['osfamily'] == 'RedHat' {
-      case $facts['operatingsystemmajreleas'] {
+      case $facts['operatingsystemmajrelease'] {
         '7': {
           base::yumrepo{'lldpd':
             ensure  => 'present',
