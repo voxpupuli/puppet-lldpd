@@ -22,7 +22,10 @@ class lldpd::service {
        source => "puppet:///modules/${module_name}/lldp2facts.timer",
       }
     } else {
-      # legacy cron
+      file{'/etc/cron.d/lldp2facts':
+        ensure => 'file',
+        source => "puppet:///modules/${module_name}/lldp2facts.cron",
+      }
     }
   }
 }
