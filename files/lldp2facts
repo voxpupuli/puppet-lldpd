@@ -9,6 +9,8 @@
 lldpctl -f json > /tmp/lldp.json 2>/dev/null
 jq . /tmp/lldp.json > /dev/null 2>&1
 if [ $? == 0 ]; then
+  # needed for Archlinux
+  mkdir -p /opt/puppetlabs/facter/facts.d
   mv /tmp/lldp.json /opt/puppetlabs/facter/facts.d/lldp.json
 else
   rm /tmp/lldp.json
