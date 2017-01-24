@@ -24,7 +24,7 @@ class lldpd::service {
       ::systemd::unit_file{'lldp2facts.timer':
         source => "puppet:///modules/${module_name}/lldp2facts.timer",
       }
-      serice{'lldp2facts.timer':
+      service{'lldp2facts.timer':
         ensure => 'running',
         enable => true,
       }
