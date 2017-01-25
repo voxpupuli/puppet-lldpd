@@ -28,7 +28,8 @@ class lldpd::service {
         ensure => 'running',
         enable => true,
       }
-    } else {
+      # ensure that we don't deploy a cronjob on FreeBSD
+    } elsif $facts['kernel'] == 'Linux'{
       file{'/etc/cron.d/lldp2facts':
         ensure => 'file',
         source => "puppet:///modules/${module_name}/lldp2facts.cron",
