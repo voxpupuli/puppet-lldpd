@@ -10,7 +10,8 @@ class lldpd::repo {
             baseurl => 'http://download.opensuse.org/repositories/home:/vbernat/CentOS_7/'
           }
         }
-        '6': {
+        # PSBM is a piece of crap and calls itself '2' as major release
+        '2', '6': {
           base::yumrepo{'lldpd':
             ensure  => 'present',
             descr   => 'lldpd toolset',
