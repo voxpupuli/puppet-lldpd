@@ -1,5 +1,5 @@
 class lldpd::install {
   package{'lldpd':
-    ensure => 'present',
+    ensure => $lldpd::ensure,
   }
 }

@@ -1,8 +1,9 @@
 # entry class for lldpd
 class lldpd (
-  Boolean $manage_facts = true,
-  Boolean $manage_service = true,
-  Boolean $manage_repo = true,
+  Boolean $manage_facts                       = true,
+  Boolean $manage_service                     = true,
+  Boolean $manage_repo                        = true,
+  Enum['present', 'absent', 'latest'] $ensure = 'latest',
 ) {
 
   contain ::lldpd::repo
