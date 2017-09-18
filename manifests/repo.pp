@@ -27,12 +27,12 @@ class lldpd::repo {
             baseurl => 'http://download.opensuse.org/repositories/home:/vbernat/Fedora_25/'
           }
         }
-        '24': {
+        '26': {
           base::yumrepo{'lldpd':
             ensure  => 'present',
             descr   => 'lldpd toolset',
-            gpgkey  => 'http://fabric-mirror.vps.hosteurope.de/lldpd/gpgkey_fedora24.key',
-            baseurl => 'http://download.opensuse.org/repositories/home:/vbernat/Fedora_24/'
+            gpgkey  => 'http://download.opensuse.org/repositories/home:/vbernat/Fedora_26/repodata/repomd.xml.key',
+            baseurl => 'http://download.opensuse.org/repositories/home:/vbernat/Fedora_26/'
           }
         }
         default: {}
