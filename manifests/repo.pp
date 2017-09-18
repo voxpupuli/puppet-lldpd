@@ -6,7 +6,7 @@ class lldpd::repo {
           base::yumrepo{'lldpd':
             ensure  => 'present',
             descr   => 'lldpd toolset',
-            gpgkey  => 'http://fabric-mirror.vps.hosteurope.de/lldpd/gpgkey_centos7.key',
+            gpgkey  => 'http://download.opensuse.org/repositories/home:/vbernat/CentOS_7/repodata/repomd.xml.key',
             baseurl => 'http://download.opensuse.org/repositories/home:/vbernat/CentOS_7/'
           }
         }
@@ -15,7 +15,7 @@ class lldpd::repo {
           base::yumrepo{'lldpd':
             ensure  => 'present',
             descr   => 'lldpd toolset',
-            gpgkey  => 'http://fabric-mirror.vps.hosteurope.de/lldpd/gpgkey_centos6.key',
+            gpgkey  => 'http://download.opensuse.org/repositories/home:/vbernat/CentOS_CentOS-6/repodata/repomd.xml.key',
             baseurl => 'http://download.opensuse.org/repositories/home:/vbernat/CentOS_CentOS-6/'
           }
         }
@@ -23,7 +23,7 @@ class lldpd::repo {
           base::yumrepo{'lldpd':
             ensure  => 'present',
             descr   => 'lldpd toolset',
-            gpgkey  => 'http://fabric-mirror.vps.hosteurope.de/lldpd/gpgkey_fedora25.key',
+            gpgkey  => 'http://download.opensuse.org/repositories/home:/vbernat/Fedora_25/repodata/repomd.xml.key',
             baseurl => 'http://download.opensuse.org/repositories/home:/vbernat/Fedora_25/'
           }
         }
