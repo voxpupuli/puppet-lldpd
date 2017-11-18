@@ -1,4 +1,5 @@
 ---
 lldpd::manage_facts: true
 lldpd::manage_service: true
+lldpd::manage_jq: true
 lldpd::ensure: 'present'

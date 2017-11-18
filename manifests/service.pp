@@ -6,8 +6,10 @@ class lldpd::service {
     }
   }
   if $lldpd::manage_facts {
-    package{'jq':
-      ensure => 'present',
+    if $lldpd::manage_jq {
+      package{'jq':
+        ensure => 'present',
+      }
     }
     file{'/usr/local/bin/lldp2facts':
       ensure => 'file',

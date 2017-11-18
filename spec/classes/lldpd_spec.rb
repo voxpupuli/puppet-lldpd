@@ -20,7 +20,6 @@ describe 'lldpd' do
         it { is_expected.to contain_class('lldpd::repo') }
         it { is_expected.to contain_service('lldpd') }
         it { is_expected.to contain_package('lldpd') }
-        it { is_expected.to contain_package('jq') }
 
         context 'it creates a cronjob/systemdtimer' do
           systemd_fact = case facts[:os]['family']
@@ -46,6 +45,12 @@ describe 'lldpd' do
           case facts[:os]['family']
           when 'RedHat'
             it { is_expected.to contain_yumrepo('lldpd') }
+          end
+        end
+
+        unless %w[RedHat CentOS].include?(facts[:os]['name'])
+          context 'it manages jq' do
+            it { is_expected.to contain_package('jq') }
           end
         end
       end
