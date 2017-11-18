@@ -14,17 +14,14 @@ class lldpd::service {
       mode   => '0755',
       source => "puppet:///modules/${module_name}/lldp2facts",
     }
-    file{'/usr/local/bin/lldp2ctl':
-      ensure =>  'absent',
-    }
     if $facts['systemd'] {
       ::systemd::unit_file{'lldp2facts.service':
         source => "puppet:///modules/${module_name}/lldp2facts.service",
-      } ->
-      ::systemd::unit_file{'lldp2facts.timer':
+      }
+      -> ::systemd::unit_file{'lldp2facts.timer':
         source => "puppet:///modules/${module_name}/lldp2facts.timer",
-      } ->
-      service{'lldp2facts.timer':
+      }
+      -> service{'lldp2facts.timer':
         ensure => 'running',
         enable => true,
       }
