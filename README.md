@@ -9,9 +9,10 @@
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Support](#support)
-3. [Development](#development)
-4. [Authors](#authors)
+2. [Setup](#setup)
+3. [Support](#support)
+4. [Development](#development)
+5. [Authors](#authors)
 
 ----
 
@@ -26,6 +27,22 @@ daemon, which will be started. the command line client has support for json
 output. This is used to create a structured fact. It is updated automatically
 with a systemd timer (or a cronjob on legacy systems).
 
+## Setup
+
+This is very easy:
+
+```puppet
+include lldpd
+```
+
+You can disable the repo management:
+
+```puppet
+class{'lldpd':
+  manage_repo => false,
+}
+```
+
 ## Support
 
 This module supports the installation on:
@@ -36,6 +53,10 @@ This module supports the installation on:
 * Fedora 25
 * Fedora 26
 * Fedora 27
+* Debian 8
+* Debian 9
+* Ubuntu 14.04
+* Ubuntu 16.04
 * Virtuozzo Linux 6
 * Parallels Cloud Server Bare Metal 5
 * FreeBSD

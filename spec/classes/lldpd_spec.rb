@@ -42,6 +42,12 @@ describe 'lldpd' do
           it { is_expected.not_to contain_yumrepo('lldpd') }
         end
 
+        if facts[:os]['family'] == 'Debian'
+          it { is_expected.to contain_apt__source('lldpd') }
+        else
+          it { is_expected.not_to contain_apt__source('lldpd') }
+        end
+
         if facts[:os]['name'] == 'CentOS'
           it { is_expected.not_to contain_package('jq') }
         else
