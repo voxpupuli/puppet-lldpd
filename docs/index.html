@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.9.9
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="puppet_class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="puppet_class_list_link"
+        href="puppet_class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'><h1>puppet-lldpd</h1>
+
+<p><a href="https://travis-ci.org/voxpupuli/puppet-lldpd"><img src="https://travis-ci.org/voxpupuli/puppet-lldpd.svg?branch=master" alt="Build Status"></a>
+<a href="https://forge.puppetlabs.com/puppet/lldpd"><img src="https://img.shields.io/puppetforge/v/puppet/lldpd.svg" alt="Puppet Forge"></a>
+<a href="https://forge.puppetlabs.com/puppet/lldpd"><img src="https://img.shields.io/puppetforge/dt/puppet/lldpd.svg" alt="Puppet Forge - downloads"></a>
+<a href="https://forge.puppetlabs.com/puppet/lldpd"><img src="https://img.shields.io/puppetforge/e/puppet/lldpd.svg" alt="Puppet Forge - endorsement"></a>
+<a href="https://forge.puppetlabs.com/puppet/lldpd"><img src="https://img.shields.io/puppetforge/f/puppet/lldpd.svg" alt="Puppet Forge - scores"></a></p>
+
+<h2>Table of Contents</h2>
+
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#support">Support</a></li>
+<li><a href="#development">Development</a></li>
+<li><a href="#authors">Authors</a></li>
+</ol>
+
+<hr>
+
+<h2>Overview</h2>
+
+<p>LLDP stands for Link Layer Discovery Protocol. This module manages the LLDP
+implementation from <a href="https://vincentbernat.github.io/lldpd/">Vincent Bernat</a>.
+<a href="https://github.com/puppetlabs/puppet-strings#puppet-strings">puppet-strings</a>
+docs are available in <a href="/docs">/docs</a>. They are generated before each release.
+This module configures the upstream repo if necessary. The LLDP requires a
+daemon, which will be started. the command line client has support for json
+output. This is used to create a structured fact. It is updated automatically
+with a systemd timer (or a cronjob on legacy systems).</p>
+
+<h2>Setup</h2>
+
+<p>This is very easy:</p>
+
+<pre class="code puppet"><code class="puppet">include lldpd
+</code></pre>
+
+<p>You can disable the repo management:</p>
+
+<pre class="code puppet"><code class="puppet">class{&#39;lldpd&#39;:
+  manage_repo =&gt; false,
+}
+</code></pre>
+
+<h2>Support</h2>
+
+<p>This module supports the installation on:</p>
+
+<ul>
+<li>Archlinux</li>
+<li>CentOS 6</li>
+<li>CentOS 7</li>
+<li>Fedora 25</li>
+<li>Fedora 26</li>
+<li>Fedora 27</li>
+<li>Debian 8</li>
+<li>Debian 9</li>
+<li>Ubuntu 14.04</li>
+<li>Ubuntu 16.04</li>
+<li>Virtuozzo Linux 6</li>
+<li>Parallels Cloud Server Bare Metal 5</li>
+<li>FreeBSD</li>
+</ul>
+
+<p>The fact is present on all Operating Systems except for FreeBSD. Docker
+acceptance tests work for CentOS 6 and 7. Vagrant acceptance tests work for
+Fedora 25. Other nodesets are currently not present. The module requires at
+least Puppet 4.9.4 (this is the first version with proper data-in-modules
+support).</p>
+
+<h2>Development</h2>
+
+<p>This project contains tests for <a href="http://rspec-puppet.com/">rspec-puppet</a>.</p>
+
+<p>Quickstart to run all linter and unit tests:</p>
+
+<pre class="code bash"><code class="bash">bundle install --path .vendor/ --without system_tests --without development --without release
+bundle exec rake test
+</code></pre>
+
+<p>For acceptance tests:</p>
+
+<pre class="code bash"><code class="bash">bundle install --path .vendor/ --with system_tests --without development --without release
+BEAKER_debug=true PUPPET_INSTALL_TYPE=agent bundle exec rake beaker:fedora-25-x64
+BEAKER_debug=true PUPPET_INSTALL_TYPE=agent bundle exec rake acceptance BEAKER_set=docker/centos-7
+</code></pre>
+
+<h2>Authors</h2>
+
+<p>puppet-lldpd is maintained by <a href="https://voxpupuli.org">Vox Pupuli</a>, it was written by <a href="https://github.com/bastelfreak">Tim &#39;bastelfreak&#39; Meusel</a>.</p>
+</div></div>
+
+      <div id="footer">
+     Generated by <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>.
+</div>
+
+    </div>
+  </body>
+</html>
