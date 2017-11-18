@@ -5,10 +5,18 @@ describe 'lldpd' do
     'agent.example.com'
   end
 
-  on_supported_os.each do |os, facts|
+  on_supported_os.each do |os, factsfromrspecpuppetfacts|
     context "on #{os} " do
+      systemd_fact = case factsfromrspecpuppetfacts[:os]['family']
+             when 'Archlinux'
+               { :systemd => true }
+             when 'RedHat'
+               factsfromrspecpuppetfacts[:os]['release']['major'].to_i >= 7 ? { :systemd => true } : { :systemd => false }
+             else
+               { systemd: false }
+             end
       let :facts do
-        facts
+        factsfromrspecpuppetfacts.merge(systemd_fact)
       end
 
       context 'with all defaults' do
@@ -23,12 +31,19 @@ describe 'lldpd' do
         it { is_expected.to contain_package('jq') }
 
         context 'it creates a cronjob/systemdtimer' do
-          it { is_expected.to contain_file('/etc/cron.d/lldp2facts') }
           it { is_expected.to contain_file('/usr/local/bin/lldp2facts') }
+          factsfromrspecpuppetfacts.merge!(systemd_fact)
+          if factsfromrspecpuppetfacts[:systemd] == true
+            it { is_expected.to contain_service('lldp2facts.timer') }
+            it { is_expected.to contain_systemd__unit_file('lldp2facts.service') }
+            it { is_expected.to contain_systemd__unit_file('lldp2facts.timer') }
+          else
+            it { is_expected.to contain_file('/etc/cron.d/lldp2facts') }
+          end
         end
 
         context 'it manages repos' do
-          case facts[:os]['family']
+          case factsfromrspecpuppetfacts[:os]['family']
           when 'RedHat'
             it { is_expected.to contain_yumrepo('lldpd') }
           end
