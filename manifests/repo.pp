@@ -3,8 +3,8 @@ class lldpd::repo {
     yumrepo{'lldpd':
       ensure  => 'present',
       descr   => 'lldpd toolset',
-      gpgkey  => "http://download.opensuse.org/repositories/home:/vbernat/${lldpd::repourl}/repodata/repomd.xml.key",
-      baseurl => "http://download.opensuse.org/repositories/home:/vbernat/${lldpd::repourl}/",
+      gpgkey  => "https://download.opensuse.org/repositories/home:/vbernat/${lldpd::repourl}/repodata/repomd.xml.key",
+      baseurl => "https://download.opensuse.org/repositories/home:/vbernat/${lldpd::repourl}/",
     }
   }
 }
