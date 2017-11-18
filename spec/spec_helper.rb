@@ -39,4 +39,5 @@ on_supported_os.each do |_os, facts|
                  end
   add_custom_fact :systemd, systemd_fact
 end
+
 # vim: syntax=ruby
