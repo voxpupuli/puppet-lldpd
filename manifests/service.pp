@@ -1,4 +1,13 @@
+# lldpd::service
+#
+# @api private
+#
+# @summary Manages the lldpd service + facts
+#
 class lldpd::service {
+
+  assert_private()
+
   if $lldpd::manage_service {
     service{'lldpd':
       ensure => 'running',

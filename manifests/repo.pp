@@ -1,4 +1,13 @@
+# lldpd::repo
+#
+# @api private
+#
+# @summary Manages the yum or apt repositories
+#
 class lldpd::repo {
+
+  assert_private()
+
   if $lldpd::manage_repo {
     case $facts['os']['family'] {
       'RedHat': {
