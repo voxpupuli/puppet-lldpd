@@ -20,11 +20,11 @@ class lldpd::service {
     if $facts['systemd'] {
       ::systemd::unit_file{'lldp2facts.service':
         source => "puppet:///modules/${module_name}/lldp2facts.service",
-      } ->
-      ::systemd::unit_file{'lldp2facts.timer':
+      }
+      -> ::systemd::unit_file{'lldp2facts.timer':
         source => "puppet:///modules/${module_name}/lldp2facts.timer",
-      } ->
-      service{'lldp2facts.timer':
+      }
+      -> service{'lldp2facts.timer':
         ensure => 'running',
         enable => true,
       }
