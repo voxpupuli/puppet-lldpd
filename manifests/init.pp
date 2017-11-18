@@ -4,6 +4,7 @@ class lldpd (
   Boolean $manage_service,
   Boolean $manage_repo,
   Boolean $manage_jq,
+  Optional[String] $repourl,
   Enum['present', 'absent', 'latest'] $ensure,
 ) {
 

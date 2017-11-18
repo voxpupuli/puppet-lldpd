@@ -2,4 +2,6 @@
 lldpd::manage_facts: true
 lldpd::manage_service: true
 lldpd::manage_jq: true
+lldpd::manage_repo: true
 lldpd::ensure: 'present'
+lldpd::repourl: ~
