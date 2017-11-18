@@ -20,12 +20,12 @@ class lldpd::repo {
       }
       'Debian': {
         apt::source{'lldpd':
-          location => "http://download.opensuse.org/repositories/home:/vbernat/${lldpd::repourl}",
+          location => "https://download.opensuse.org/repositories/home:/vbernat/${lldpd::repourl}",
           release  => ' ',
           repos    => '/',
           key      => {
             id     => '4B90925372E0A4F6',
-            source => "http://download.opensuse.org/repositories/home:/vbernat/${lldpd::repourl}/Release.key",
+            source => "https://download.opensuse.org/repositories/home:/vbernat/${lldpd::repourl}/Release.key",
           },
         }
       }
