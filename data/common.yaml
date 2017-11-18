@@ -1,0 +1,4 @@
+---
+lldpd::manage_facts: true
+lldpd::manage_service: true
+lldpd::ensure: 'present'
