@@ -6,7 +6,7 @@
 <title>
   Puppet Class: lldpd
   
-    &mdash; Documentation by YARD 0.9.9
+    &mdash; Documentation by YARD 0.9.10
   
 </title>
 
@@ -212,9 +212,7 @@
 27
 28
 29
-30
-31
-32</pre>
+30</pre>
       </td>
       <td>
         <pre class="code"><span class="info file"># File 'manifests/init.pp', line 14</span>
@@ -230,12 +228,10 @@ class lldpd (
 
   contain ::lldpd::repo
   contain ::lldpd::install
-  contain ::lldpd::config
   contain ::lldpd::service
 
   Class[&#39;lldpd::repo&#39;]
   -&gt; Class[&#39;lldpd::install&#39;]
-  -&gt; Class[&#39;lldpd::config&#39;]
   ~&gt; Class[&#39;lldpd::service&#39;]
 }</pre>
       </td>
