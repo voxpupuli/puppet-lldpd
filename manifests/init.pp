@@ -22,11 +22,9 @@ class lldpd (
 
   contain ::lldpd::repo
   contain ::lldpd::install
-  contain ::lldpd::config
   contain ::lldpd::service
 
   Class['lldpd::repo']
   -> Class['lldpd::install']
-  -> Class['lldpd::config']
   ~> Class['lldpd::service']
 }

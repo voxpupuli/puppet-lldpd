@@ -20,7 +20,6 @@ describe 'lldpd' do
 
         it { is_expected.to compile.with_all_deps }
         it { is_expected.to contain_class('lldpd') }
-        it { is_expected.to contain_class('lldpd::config') }
         it { is_expected.to contain_class('lldpd::service') }
         it { is_expected.to contain_class('lldpd::install') }
         it { is_expected.to contain_class('lldpd::repo') }
