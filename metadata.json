@@ -1,12 +1,12 @@
 {
   "name": "puppet-lldpd",
-  "version": "0.1.0",
-  "author": "Tim Meusel",
-  "summary": "installs, configures, and manages the marmoset service",
+  "version": "1.0.0",
+  "author": "Vox Pupuli",
+  "summary": "installs, configures, and manages the lldpd daemon from Vincent Bernat",
   "license": "AGPL-3.0",
-  "source": "https://github.com/virtapi/puppet-lldpd",
-  "project_page": "https://github.com/virtapi/puppet-lldpd",
-  "issues_url": "https://github.com/virtapi/puppet-lldpd",
+  "source": "https://github.com/voxpupuli/puppet-lldpd",
+  "project_page": "https://github.com/voxpupuli/puppet-lldpd",
+  "issues_url": "https://github.com/voxpupuli/puppet-lldpd/issues",
   "description": "This is a nice module to manage lldpd",
   "dependencies": [
     {
