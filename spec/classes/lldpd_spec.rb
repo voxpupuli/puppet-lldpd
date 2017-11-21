@@ -47,7 +47,7 @@ describe 'lldpd' do
           it { is_expected.not_to contain_apt__source('lldpd') }
         end
 
-        if facts[:os]['name'] == 'CentOS'
+        if %w[CentOS RedHat].include? facts[:os]['family']
           it { is_expected.not_to contain_package('jq') }
         else
           it { is_expected.to contain_package('jq') }
