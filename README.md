@@ -10,12 +10,12 @@
 
 ## Table of Contents
 
-1. [Overview](#overview)
-2. [Setup](#setup)
-3. [Support](#support)
-4. [Limitations](#limitations)
-5. [Development](#development)
-6. [Authors](#authors)
+* [Overview](#overview)
+* [Setup](#setup)
+* [Support](#support)
+* [Limitations](#limitations)
+* [Development](#development)
+* [Authors](#authors)
 
 ----
 
