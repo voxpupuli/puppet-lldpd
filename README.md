@@ -10,11 +10,12 @@
 
 ## Table of Contents
 
-1. [Overview](#overview)
-2. [Setup](#setup)
-3. [Support](#support)
-4. [Development](#development)
-5. [Authors](#authors)
+* [Overview](#overview)
+* [Setup](#setup)
+* [Support](#support)
+* [Limitations](#limitations)
+* [Development](#development)
+* [Authors](#authors)
 
 ----
 
@@ -68,6 +69,13 @@ acceptance tests work for CentOS 6 and 7. Vagrant acceptance tests work for
 Fedora 25. Other nodesets are currently not present. The module requires at
 least Puppet 4.9.4 (this is the first version with proper data-in-modules
 support).
+
+## Limitations
+
+The facts require [jq](https://stedolan.github.io/jq/) to work. The installation
+can be configured with $manage\_jq. This is disabled on CentOS machines. You
+can install it on CentOS if you configure the [EPEL](https://fedoraproject.org/wiki/EPEL)
+repository.
 
 ## Development
 
