@@ -6,7 +6,6 @@ begin
   require 'puppet_blacksmith/rake_tasks'
   require 'voxpupuli/release/rake_tasks'
   require 'puppet-strings/tasks'
-  require 'github_api'
 rescue LoadError
 end
 
@@ -76,11 +75,6 @@ task 'beaker_sets', [:directory] do |t, args|
   end
 end
 
-def reponame
-  metadata_json = File.join(File.dirname(__FILE__), 'metadata.json')
-  metadata = JSON.load(File.read(metadata_json))
-  metadata['name']
-end
 begin
   require 'github_changelog_generator/task'
   GitHubChangelogGenerator::RakeTask.new :changelog do |config|
@@ -89,42 +83,10 @@ begin
     config.header = "# Changelog\n\nAll notable changes to this project will be documented in this file.\nEach new release typically also includes the latest modulesync defaults.\nThese should not affect the functionality of the module."
     config.exclude_labels = %w{duplicate question invalid wontfix wont-fix modulesync skip-changelog}
     config.user = 'voxpupuli'
-    config.project = reponame
+    metadata_json = File.join(File.dirname(__FILE__), 'metadata.json')
+    metadata = JSON.load(File.read(metadata_json))
+    config.project = metadata['name']
   end
 rescue LoadError
 end
-
-desc "Create a github release"
-task 'github_release' do
-  (puts "you need to provide a GitHub OAuth Token as environment variabe GITHUB_OAUTH"; exit) unless ENV['GITHUB_OAUTH']
-  github = Github.new oauth_token: ENV['GITHUB_OAUTH']
-  release = {
-    owner: 'voxpupuli',
-    repo: reponame,
-    tag_name: metadata['version'],
-    name: changelog[subsections[0]].match(/^## \d+-\d+-\d+ - (?<name>.*)$/)[:name],
-    body: changelog[subsections[0]..subsections[1] - 2].join("\n"),
-    draft: false,
-    prerelease: false
-  }
-
-  response = github.repos.releases.create release
-  # create gpg sig for the module
-  # 'gpg', '--sign', '--detach-sign', '--armor' pkg/something
-
-  # itereate on github.repos.releases.assets.upload
-  ["#{reponame}-#{metadata['version']}-tar.gz", "#{reponame}-#{metadata['version']}-tar.gz.asc"].each do |filename|
-    asset = {
-      owner: 'voxpupuli',
-      repo: reponame,
-      id: response['id'],
-      name: filename,
-      filepath: "pkg/#{filename}",
-      content_type: 'application/gzip'
-    }
-
-    github.repos.releases.assets.upload asset
-  end
-end
-
 # vim: syntax=ruby

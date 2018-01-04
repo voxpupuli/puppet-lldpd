@@ -61,7 +61,6 @@ group :release do
   gem 'puppet-blacksmith',           :require => false
   gem 'voxpupuli-release',           :require => false, :git => 'https://github.com/voxpupuli/voxpupuli-release-gem'
   gem 'puppet-strings', '~> 1.0',    :require => false
-  gem 'github_api',                  :require => false
 end
 
 
