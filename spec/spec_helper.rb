@@ -28,16 +28,4 @@ RSpec.configure do |c|
   c.default_facts = default_facts
 end
 
-on_supported_os.each do |_os, facts|
-  systemd_fact = case facts[:os]['family']
-                 when 'Archlinux'
-                   true
-                 when 'RedHat'
-                   facts[:os]['release']['major'].to_i >= 7 ? true : false
-                 else
-                   false
-                 end
-  add_custom_fact :systemd, systemd_fact
-end
-
 # vim: syntax=ruby
