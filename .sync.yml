@@ -7,3 +7,4 @@
     - set: docker/centos-6
     - set: docker/centos-7
     - set: docker/debian-8
+    - set: docker/debian-9
