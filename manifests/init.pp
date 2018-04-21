@@ -20,9 +20,9 @@ class lldpd (
   Enum['present', 'absent', 'latest'] $ensure,
 ) {
 
-  contain ::lldpd::repo
-  contain ::lldpd::install
-  contain ::lldpd::service
+  contain lldpd::repo
+  contain lldpd::install
+  contain lldpd::service
 
   Class['lldpd::repo']
   -> Class['lldpd::install']
