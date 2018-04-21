@@ -5,3 +5,4 @@ lldpd::manage_jq: true
 lldpd::manage_repo: true
 lldpd::ensure: 'present'
 lldpd::repourl: ~
+lldpd::gpgkeyfingerprint: 'EF795E4D26E48F1D7661267B431C37A97C3E114B'

@@ -10,6 +10,7 @@
 # @param manage_repo Enable or disable the repository setup
 # @param manage_jq Enable or disable the installation of jq (doesn't manage maybe needed third-part repositories like EPEL)
 # @param repourl String that completes the url for the upstream repository
+# @param gpgkeyfingerprint String with the ID from the gpg key that signed the packages
 # @param ensure Install or deinstall all related components
 class lldpd (
   Boolean $manage_facts,
@@ -17,6 +18,7 @@ class lldpd (
   Boolean $manage_repo,
   Boolean $manage_jq,
   Optional[String] $repourl,
+  String $gpgkeyfingerprint,
   Enum['present', 'absent', 'latest'] $ensure,
 ) {
 

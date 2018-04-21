@@ -106,6 +106,10 @@ install it. Defaults to true on all systems except for CentOS. See also
 String, part of the upstream repository URL. The module provides sane defaults
 for all repositories. There should be no need to set this parameter.
 
+### `$gpgkeyfingerprint`
+String. The ID from the key that's used to sign the packages. Currently only
+used for the apt repo.
+
 ### `$ensure`
 
 String, allowed values are present, absent and latest. This sets the status of
