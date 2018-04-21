@@ -24,7 +24,7 @@ class lldpd::repo {
           release  => ' ',
           repos    => '/',
           key      => {
-            id     => '4B90925372E0A4F6',
+            id     => $lldpd::gpgkeyfingerprint,
             source => "http://download.opensuse.org/repositories/home:/vbernat/${lldpd::repourl}/Release.key",
           },
         }
