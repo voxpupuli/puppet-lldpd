@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v1.1.0](https://github.com/voxpupuli/puppet-lldpd/tree/v1.1.0) (2018-04-25)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v1.0.1...v1.1.0)
+
+**Merged pull requests:**
+
+- bump puppet version requirement [\#37](https://github.com/voxpupuli/puppet-lldpd/pull/37) ([bastelfreak](https://github.com/bastelfreak))
+- run acceptance tests on debian 9 [\#36](https://github.com/voxpupuli/puppet-lldpd/pull/36) ([bastelfreak](https://github.com/bastelfreak))
+- switch to relative class scope / update gpg key for apt repos [\#34](https://github.com/voxpupuli/puppet-lldpd/pull/34) ([bastelfreak](https://github.com/bastelfreak))
+- allow camptocamp/systemd 2.X [\#33](https://github.com/voxpupuli/puppet-lldpd/pull/33) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [v1.0.1](https://github.com/voxpupuli/puppet-lldpd/tree/v1.0.1) (2018-02-21)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v1.0.0...v1.0.1)
@@ -19,7 +30,6 @@ These should not affect the functionality of the module.
 **Merged pull requests:**
 
 - add parameter section to README.md [\#28](https://github.com/voxpupuli/puppet-lldpd/pull/28) ([bastelfreak](https://github.com/bastelfreak))
-- release 1.0.0 [\#23](https://github.com/voxpupuli/puppet-lldpd/pull/23) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [v1.0.0](https://github.com/voxpupuli/puppet-lldpd/tree/v1.0.0) (2017-11-21)
 
