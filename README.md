@@ -63,7 +63,7 @@ This module supports the installation on:
 * Ubuntu 16.04
 * Virtuozzo Linux 6
 * Parallels Cloud Server Bare Metal 5
-* FreeBSD
+* FreeBSD 11
 
 The fact is present on all Operating Systems except for FreeBSD. Docker
 acceptance tests work for CentOS 6 and 7. Vagrant acceptance tests work for

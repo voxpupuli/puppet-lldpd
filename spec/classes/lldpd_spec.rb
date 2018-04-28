@@ -31,7 +31,7 @@ describe 'lldpd' do
           it { is_expected.to contain_service('lldp2facts.timer') }
           it { is_expected.to contain_systemd__unit_file('lldp2facts.service') }
           it { is_expected.to contain_systemd__unit_file('lldp2facts.timer') }
-        else
+        elsif facts[:kernel] == 'Linux'
           it { is_expected.to contain_file('/etc/cron.d/lldp2facts') }
         end
 
