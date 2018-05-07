@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v1.2.0](https://github.com/voxpupuli/puppet-lldpd/tree/v1.2.0) (2018-05-06)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v1.1.0...v1.2.0)
+
+**Implemented enhancements:**
+
+- add ubuntu 18.04 support [\#39](https://github.com/voxpupuli/puppet-lldpd/pull/39) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- execute travis jobs on newer ruby versions [\#41](https://github.com/voxpupuli/puppet-lldpd/pull/41) ([bastelfreak](https://github.com/bastelfreak))
+- fix documentation about FreeBSD 11 support [\#40](https://github.com/voxpupuli/puppet-lldpd/pull/40) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [v1.1.0](https://github.com/voxpupuli/puppet-lldpd/tree/v1.1.0) (2018-04-25)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v1.0.1...v1.1.0)
