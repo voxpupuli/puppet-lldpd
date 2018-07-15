@@ -41,7 +41,7 @@ describe 'lldpd' do
           it { is_expected.not_to contain_yumrepo('lldpd') }
         end
 
-        if facts[:os]['family'] == 'Debian'
+        if facts[:os]['family'] == 'Debian' and facts[:os]['release']['full'] != '18.04'
           it { is_expected.to contain_apt__source('lldpd') }
         else
           it { is_expected.not_to contain_apt__source('lldpd') }
