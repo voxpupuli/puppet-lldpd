@@ -55,7 +55,7 @@ Enable or disable the repository setup
 
 Data type: `Boolean`
 
-Enable or disable the installation of jq (doesn't manage maybe needed third-part repositories like EPEL)
+Enable or disable the installation of jq (this manages only the package, not any repository that you might need)
 
 ##### `repourl`
 
