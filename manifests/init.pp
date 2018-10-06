@@ -8,7 +8,7 @@
 # @param manage_facts Enable or disable the fact deployment. Doesn't work on FreeBSD yet
 # @param manage_service Enable or disable the service management
 # @param manage_repo Enable or disable the repository setup
-# @param manage_jq Enable or disable the installation of jq (doesn't manage maybe needed third-part repositories like EPEL)
+# @param manage_jq Enable or disable the installation of jq (this manages only the package, not any repository that you might need)
 # @param repourl String that completes the url for the upstream repository
 # @param gpgkeyfingerprint String with the ID from the gpg key that signed the packages
 # @param ensure Install or deinstall all related components
