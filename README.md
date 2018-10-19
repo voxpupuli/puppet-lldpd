@@ -31,6 +31,9 @@ daemon, which will be started. the command line client has support for json
 output. This is used to create a structured fact. It is updated automatically
 with a systemd timer (or a cronjob on legacy systems).
 
+The [REFERENCE.md](REFERENCE.md) contains [puppet-strings](https://github.com/puppetlabs/puppet-strings#puppet-strings)
+generated docs.
+
 ## Setup
 
 This is very easy:
