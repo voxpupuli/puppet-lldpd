@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v1.3.1](https://github.com/voxpupuli/puppet-lldpd/tree/v1.3.1) (2018-10-19)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v1.3.0...v1.3.1)
+
+**Merged pull requests:**
+
+- modulesync 2.2.0 and allow puppet 6.x [\#59](https://github.com/voxpupuli/puppet-lldpd/pull/59) ([bastelfreak](https://github.com/bastelfreak))
+- add initial REFERENCE.md [\#58](https://github.com/voxpupuli/puppet-lldpd/pull/58) ([bastelfreak](https://github.com/bastelfreak))
+- allow puppetlabs/stdlib 5.x and puppetlabs/apt 6.x [\#56](https://github.com/voxpupuli/puppet-lldpd/pull/56) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [v1.3.0](https://github.com/voxpupuli/puppet-lldpd/tree/v1.3.0) (2018-08-25)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v1.2.0...v1.3.0)
@@ -11,7 +21,6 @@ These should not affect the functionality of the module.
 **Implemented enhancements:**
 
 - Add official ubuntu 18.04 support [\#49](https://github.com/voxpupuli/puppet-lldpd/issues/49)
-- allow puppetlabs/apt 5.x [\#51](https://github.com/voxpupuli/puppet-lldpd/pull/51) ([bastelfreak](https://github.com/bastelfreak))
 
 **Fixed bugs:**
 
@@ -19,6 +28,7 @@ These should not affect the functionality of the module.
 
 **Merged pull requests:**
 
+- allow puppetlabs/apt 5.x [\#51](https://github.com/voxpupuli/puppet-lldpd/pull/51) ([bastelfreak](https://github.com/bastelfreak))
 - drop EOL OSs; fix puppet version range [\#45](https://github.com/voxpupuli/puppet-lldpd/pull/45) ([bastelfreak](https://github.com/bastelfreak))
 - Rely on beaker-hostgenerator for docker nodesets [\#44](https://github.com/voxpupuli/puppet-lldpd/pull/44) ([ekohl](https://github.com/ekohl))
 
