@@ -35,7 +35,7 @@ describe 'lldpd' do
           it { is_expected.to contain_file('/etc/cron.d/lldp2facts') }
         end
 
-        if facts[:os]['family'] == 'RedHat'
+        if facts[:os]['family'] == 'RedHat' && facts[:os]['release']['major'].to_i < 27
           it { is_expected.to contain_yumrepo('lldpd') }
         else
           it { is_expected.not_to contain_yumrepo('lldpd') }
