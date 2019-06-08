@@ -1,3 +1,0 @@
----
-lldpd::manage_repo: true
-lldpd::repourl: 'xUbuntu_14.04'
