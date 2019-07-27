@@ -62,7 +62,6 @@ This module supports the installation on:
 * Fedora 27
 * Debian 8
 * Debian 9
-* Ubuntu 14.04
 * Ubuntu 16.04
 * Ubuntu 18.04
 * Virtuozzo Linux 6

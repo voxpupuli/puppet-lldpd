@@ -2,7 +2,6 @@
 .travis.yml:
   secure: "k2eyprVmf+1ouw86/4rhyQ/j/cf/uJly5Gww282NibxexQLqEgWwqm0ivgADv6T952J6n6AHAHhtAAq+PZ6NEUfGjM0vl99EH44Le92dp4b2EwW35kbbs7pfmnLMnyt5A6mLevUAcTmMZHKXAcS/8VWHx9elahm1o9d2VU0Vl+sEbdisPPK76nqa1G9BaTlSud7AEl3PT09HMyMDeYJBRU8S1I3vVckEulK+MMEeMwTNFaUtdnHSSo1Ky6DaoRTOFaioz187QTzcIvYnARjYiNwo/ucvekFcCAZXmym4Xhz3UlUTm+Gjf4tXHUD2UoI09Vs6Cz+0lhN90tNJvIiz4D1qNMfFSoQzGm+1eG/sAsmWzdBSggC/EBPPPqT4TTLV0fsmUZwUGgpqQGU0XripMLEPmhdeAbH9o1oprUGuNSPXtrjO1nA0U1gWbrC2w9ko2y00YOFxGEL11uKvQyeWTL2WFIy/FvqxJvg1lkA+AU8+DfWKhKcE7lmFqsqAYyknHQ1H33AeSIlD4xg3foCRQh6XpTdxnHrus5iT9xuAkv45TvwiU+jH+K0mTNi6E1XzFL9GizyQprkpE14wQAwTEgdvi3LRaeNxlkzLUgrbQhWEyIiwGtB9tbCoZiLrMQw2LdNTrz0iS23KPh85gF2YlsxDYYA5TmSdzSiwkEEDl9U="
   docker_sets:
-    - set: ubuntu1404-64
     - set: ubuntu1604-64
     - set: ubuntu1804-64
     - set: centos6-64
