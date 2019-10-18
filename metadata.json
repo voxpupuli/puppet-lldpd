@@ -66,6 +66,12 @@
       "operatingsystemrelease": [
         "11"
       ]
+    },
+    {
+      "operatingsystem": "VirtuozzoLinux",
+      "operatingsystemrelease": [
+        "7"
+      ]
     }
   ],
   "requirements": [
