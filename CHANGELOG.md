@@ -4,7 +4,25 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v1.3.1](https://github.com/voxpupuli/puppet-lldpd/tree/v1.3.1) (2018-10-19)
+## [v2.0.0](https://github.com/voxpupuli/puppet-lldpd/tree/v2.0.0) (2019-10-18)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v1.3.1...v2.0.0)
+
+**Breaking changes:**
+
+- drop Ubuntu 14.04 support [\#65](https://github.com/voxpupuli/puppet-lldpd/pull/65) ([bastelfreak](https://github.com/bastelfreak))
+- modulesync 2.7.0 and drop puppet 4 [\#62](https://github.com/voxpupuli/puppet-lldpd/pull/62) ([bastelfreak](https://github.com/bastelfreak))
+
+**Implemented enhancements:**
+
+- Add VirtuozzoLinux 7 support [\#69](https://github.com/voxpupuli/puppet-lldpd/pull/69) ([bastelfreak](https://github.com/bastelfreak))
+- allow puppetlabs/stdlib 6.x [\#68](https://github.com/voxpupuli/puppet-lldpd/pull/68) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Allow puppetlabs/apt 7.x [\#64](https://github.com/voxpupuli/puppet-lldpd/pull/64) ([dhoppe](https://github.com/dhoppe))
+
+## [v1.3.1](https://github.com/voxpupuli/puppet-lldpd/tree/v1.3.1) (2018-10-20)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v1.3.0...v1.3.1)
 
