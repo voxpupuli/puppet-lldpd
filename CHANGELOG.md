@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v2.0.1](https://github.com/voxpupuli/puppet-lldpd/tree/v2.0.1) (2019-10-19)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v2.0.0...v2.0.1)
+
+**Merged pull requests:**
+
+- Update tests for VirtuozzoLinux 7 [\#72](https://github.com/voxpupuli/puppet-lldpd/pull/72) ([bastelfreak](https://github.com/bastelfreak))
+- fix docs links in README.md [\#71](https://github.com/voxpupuli/puppet-lldpd/pull/71) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [v2.0.0](https://github.com/voxpupuli/puppet-lldpd/tree/v2.0.0) (2019-10-18)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v1.3.1...v2.0.0)
