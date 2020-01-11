@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v2.2.0](https://github.com/voxpupuli/puppet-lldpd/tree/v2.2.0) (2020-01-11)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v2.1.0...v2.2.0)
+
+**Merged pull requests:**
+
+- simplify systemd timer setup [\#79](https://github.com/voxpupuli/puppet-lldpd/pull/79) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [v2.1.0](https://github.com/voxpupuli/puppet-lldpd/tree/v2.1.0) (2019-11-07)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v2.0.1...v2.1.0)
