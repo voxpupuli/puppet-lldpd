@@ -20,3 +20,5 @@ spec/acceptance/nodesets/ec2/ubuntu-1604-x64.yml:
   delete: true
 spec/acceptance/nodesets/ec2/windows-2016-base-x64.yml:
   delete: true
+spec/spec_helper_acceptance.rb:
+  unmanaged: false
