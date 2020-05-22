@@ -1,3 +1,2 @@
 ---
-lldpd::manage_repo: true
 lldpd::repourl: 'Debian_9.0'
