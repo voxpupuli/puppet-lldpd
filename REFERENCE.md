@@ -39,11 +39,15 @@ Data type: `Boolean`
 
 Enable or disable the fact deployment. Doesn't work on FreeBSD yet
 
+Default value: `true`
+
 ##### `manage_service`
 
 Data type: `Boolean`
 
 Enable or disable the service management
+
+Default value: `true`
 
 ##### `manage_repo`
 
@@ -59,19 +63,25 @@ Enable or disable the installation of jq (this manages only the package, not any
 
 ##### `repourl`
 
-Data type: `Optional[String]`
+Data type: `Optional[String[1]]`
 
 String that completes the url for the upstream repository
 
+Default value: `undef`
+
 ##### `gpgkeyfingerprint`
 
-Data type: `String`
+Data type: `String[1]`
 
 String with the ID from the gpg key that signed the packages
+
+Default value: 'EF795E4D26E48F1D7661267B431C37A97C3E114B'
 
 ##### `ensure`
 
 Data type: `Enum['present', 'absent', 'latest']`
 
 Install or deinstall all related components
+
+Default value: 'present'
 

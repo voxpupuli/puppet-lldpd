@@ -13,13 +13,13 @@
 # @param gpgkeyfingerprint String with the ID from the gpg key that signed the packages
 # @param ensure Install or deinstall all related components
 class lldpd (
-  Boolean $manage_facts,
-  Boolean $manage_service,
   Boolean $manage_repo,
   Boolean $manage_jq,
-  Optional[String] $repourl,
-  String $gpgkeyfingerprint,
-  Enum['present', 'absent', 'latest'] $ensure,
+  Boolean $manage_facts = true,
+  Boolean $manage_service = true,
+  Optional[String[1]] $repourl = undef,
+  String[1] $gpgkeyfingerprint = 'EF795E4D26E48F1D7661267B431C37A97C3E114B',
+  Enum['present', 'absent', 'latest'] $ensure = 'present',
 ) {
 
   contain lldpd::repo
