@@ -65,6 +65,7 @@ This module supports the installation on:
 * Debian 10
 * Ubuntu 16.04
 * Ubuntu 18.04
+* Ubuntu 20.04
 * VirtuozzoLinux 6
 * VirtuozzoLinux 7
 * Parallels Cloud Server Bare Metal 5
