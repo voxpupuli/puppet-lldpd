@@ -21,7 +21,6 @@ class lldpd (
   String[1] $gpgkeyfingerprint = 'EF795E4D26E48F1D7661267B431C37A97C3E114B',
   Enum['present', 'absent', 'latest'] $ensure = 'present',
 ) {
-
   contain lldpd::repo
   contain lldpd::install
   contain lldpd::service

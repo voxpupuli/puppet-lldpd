@@ -5,10 +5,9 @@
 # @summary Manages the lldpd package
 #
 class lldpd::install {
-
   assert_private()
 
-  package{'lldpd':
+  package { 'lldpd':
     ensure => $lldpd::ensure,
   }
 }
