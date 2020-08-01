@@ -5,13 +5,12 @@
 # @summary Manages the yum or apt repositories
 #
 class lldpd::repo {
-
   assert_private()
 
   if $lldpd::manage_repo {
     case $facts['os']['family'] {
       'RedHat': {
-        yumrepo{'lldpd':
+        yumrepo { 'lldpd':
           ensure  => 'present',
           descr   => 'lldpd toolset',
           gpgkey  => "https://download.opensuse.org/repositories/home:/vbernat/${lldpd::repourl}/repodata/repomd.xml.key",
@@ -19,7 +18,7 @@ class lldpd::repo {
         }
       }
       'Debian': {
-        apt::source{'lldpd':
+        apt::source { 'lldpd':
           location => "http://download.opensuse.org/repositories/home:/vbernat/${lldpd::repourl}",
           release  => ' ',
           repos    => '/',
