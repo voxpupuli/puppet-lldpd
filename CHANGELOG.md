@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v2.3.0](https://github.com/voxpupuli/puppet-lldpd/tree/v2.3.0) (2020-08-03)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v2.2.0...v2.3.0)
+
+**Implemented enhancements:**
+
+- move common.yaml to init.pp [\#85](https://github.com/voxpupuli/puppet-lldpd/pull/85) ([bastelfreak](https://github.com/bastelfreak))
+- Add Debian 10 support [\#84](https://github.com/voxpupuli/puppet-lldpd/pull/84) ([bastelfreak](https://github.com/bastelfreak))
+
+**Closed issues:**
+
+- Debian Repo key has changed, fingerprint needs to be updated [\#87](https://github.com/voxpupuli/puppet-lldpd/issues/87)
+
+**Merged pull requests:**
+
+- modulesync 3.0.0 & puppet-lint updates [\#89](https://github.com/voxpupuli/puppet-lldpd/pull/89) ([bastelfreak](https://github.com/bastelfreak))
+- Use voxpupuli-acceptance [\#83](https://github.com/voxpupuli/puppet-lldpd/pull/83) ([ekohl](https://github.com/ekohl))
+- update repo links to https [\#81](https://github.com/voxpupuli/puppet-lldpd/pull/81) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [v2.2.0](https://github.com/voxpupuli/puppet-lldpd/tree/v2.2.0) (2020-01-11)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v2.1.0...v2.2.0)
