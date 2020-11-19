@@ -1,3 +1,2 @@
 ---
-lldpd::manage_jq: false
 lldpd::repourl: 'CentOS_%{facts.os.release.major}'
