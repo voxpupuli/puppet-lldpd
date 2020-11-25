@@ -1,3 +1,2 @@
 ---
-lldpd::repourl: 'CentOS_7'
 lldpd::manage_jq: true
