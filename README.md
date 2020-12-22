@@ -79,28 +79,10 @@ The main class provides an interface that can be used. It can be configured via
 the upcoming parameters. All other classes are internal and can't be accessed
 directly.
 
-### `$manage_facts`
-
-This is a boolean, it defaults to true on all systems except for the CentOS
-family (see [limitations](#limitations). If true, the module will provide
-a script to run lldpctl and save the output as json as structured fact. A
-systemd timer or a cronjob will be deployed to execute the script periodically.
-This decouples the fact generation from the actual facter/puppet.
-
-### `$manage_service`
-
-Boolean, if true, the module will enable the service. Defaults to true.
-
 ### `$manage_repo`
 
 Boolean, if true, the module will setup the upstream repository. Defaults to
 true on Debian and CentOS family.
-
-### `$manage_jq`
-
-Boolean. jq is a dependency needed for the fact generation. This module can
-install it. Defaults to true on all systems except for CentOS. See also
-[limitations](#limitations).
 
 ### `$repourl`
 
@@ -115,13 +97,6 @@ used for the apt repo.
 
 String, allowed values are present, absent and latest. This sets the status of
 the lldpd package.
-
-## Limitations
-
-The facts require [jq](https://stedolan.github.io/jq/) to work. The installation
-can be configured with $manage\_jq. This is disabled on CentOS machines. You
-can install it on CentOS if you configure the [EPEL](https://fedoraproject.org/wiki/EPEL)
-repository.
 
 ## Development
 

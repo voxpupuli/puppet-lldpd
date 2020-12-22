@@ -34,33 +34,11 @@ include lldpd
 
 The following parameters are available in the `lldpd` class.
 
-##### `manage_facts`
-
-Data type: `Boolean`
-
-Enable or disable the fact deployment. Doesn't work on FreeBSD yet
-
-Default value: ``true``
-
-##### `manage_service`
-
-Data type: `Boolean`
-
-Enable or disable the service management
-
-Default value: ``true``
-
 ##### `manage_repo`
 
 Data type: `Boolean`
 
 Enable or disable the repository setup
-
-##### `manage_jq`
-
-Data type: `Boolean`
-
-Enable or disable the installation of jq (this manages only the package, not any repository that you might need)
 
 ##### `repourl`
 
