@@ -1,3 +1,2 @@
 ---
-lldpd::manage_jq: true
 lldpd::manage_repo: true

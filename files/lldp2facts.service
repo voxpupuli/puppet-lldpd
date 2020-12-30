@@ -1,6 +1,0 @@
-[Unit]
-Description=Run lldpctl and update facts
-
-[Service]
-Type=oneshot
-ExecStart=/usr/local/bin/lldp2facts
