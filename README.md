@@ -55,20 +55,14 @@ class{'lldpd':
 This module supports the installation on:
 
 * Archlinux
-* CentOS 6
 * CentOS 7
-* Fedora 25
-* Fedora 26
-* Fedora 27
-* Debian 8
+* Fedora 32
 * Debian 9
 * Debian 10
 * Ubuntu 16.04
 * Ubuntu 18.04
 * Ubuntu 20.04
-* VirtuozzoLinux 6
 * VirtuozzoLinux 7
-* Parallels Cloud Server Bare Metal 5
 * FreeBSD 11
 
 The fact is present on all Operating Systems except for FreeBSD. Docker
