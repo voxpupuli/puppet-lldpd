@@ -64,6 +64,7 @@ This module supports the installation on:
 * Ubuntu 20.04
 * VirtuozzoLinux 7
 * FreeBSD 11
+* FreeBSD 12
 
 The fact is present on all Operating Systems except for FreeBSD. Docker
 acceptance tests work for CentOS 6 and 7. Vagrant acceptance tests work for
