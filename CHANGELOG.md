@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v3.0.0](https://github.com/voxpupuli/puppet-lldpd/tree/v3.0.0) (2021-04-18)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v2.3.0...v3.0.0)
+
+**Breaking changes:**
+
+- Drop Puppet 5 support; enable Puppet 7 support [\#103](https://github.com/voxpupuli/puppet-lldpd/pull/103) ([bastelfreak](https://github.com/bastelfreak))
+- Drop EoL CentOS 6 [\#100](https://github.com/voxpupuli/puppet-lldpd/pull/100) ([bastelfreak](https://github.com/bastelfreak))
+- Drop Debian8 \(jessie\) support [\#99](https://github.com/voxpupuli/puppet-lldpd/pull/99) ([b4ldr](https://github.com/b4ldr))
+
+**Implemented enhancements:**
+
+- Allow latest dependencies [\#102](https://github.com/voxpupuli/puppet-lldpd/pull/102) ([bastelfreak](https://github.com/bastelfreak))
+- Add FreeBSD 12 support [\#101](https://github.com/voxpupuli/puppet-lldpd/pull/101) ([bastelfreak](https://github.com/bastelfreak))
+- rewrite module with native fact [\#97](https://github.com/voxpupuli/puppet-lldpd/pull/97) ([b4ldr](https://github.com/b4ldr))
+
+**Fixed bugs:**
+
+- CentOS 6: Fix mirror URL [\#94](https://github.com/voxpupuli/puppet-lldpd/pull/94) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- regenerate REFERENCE.md / Add puppet-lint-param-docs linter [\#92](https://github.com/voxpupuli/puppet-lldpd/pull/92) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [v2.3.0](https://github.com/voxpupuli/puppet-lldpd/tree/v2.3.0) (2020-08-03)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v2.2.0...v2.3.0)
@@ -20,6 +44,7 @@ These should not affect the functionality of the module.
 **Merged pull requests:**
 
 - modulesync 3.0.0 & puppet-lint updates [\#89](https://github.com/voxpupuli/puppet-lldpd/pull/89) ([bastelfreak](https://github.com/bastelfreak))
+- Binaries now exist for 20.04 so use the repo. [\#88](https://github.com/voxpupuli/puppet-lldpd/pull/88) ([jchonig](https://github.com/jchonig))
 - Use voxpupuli-acceptance [\#83](https://github.com/voxpupuli/puppet-lldpd/pull/83) ([ekohl](https://github.com/ekohl))
 - update repo links to https [\#81](https://github.com/voxpupuli/puppet-lldpd/pull/81) ([bastelfreak](https://github.com/bastelfreak))
 
