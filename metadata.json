@@ -10,7 +10,7 @@
   "description": "This is a nice module to manage lldpd",
   "dependencies": [
     {
-      "name": "camptocamp/systemd",
+      "name": "puppet/systemd",
       "version_requirement": ">= 1.0.0 < 4.0.0"
     },
     {

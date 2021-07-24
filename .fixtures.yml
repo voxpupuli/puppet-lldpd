@@ -1,7 +1,7 @@
 fixtures:
   repositories:
     stdlib: https://github.com/puppetlabs/puppetlabs-stdlib.git
-    systemd: https://github.com/camptocamp/puppet-systemd.git
+    systemd: https://github.com/voxpupuli/puppet-systemd.git
     apt: https://github.com/puppetlabs/puppetlabs-apt.git
     yumrepo_core:
       repo: https://github.com/puppetlabs/puppetlabs-yumrepo_core.git
