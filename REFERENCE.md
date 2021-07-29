@@ -6,19 +6,11 @@
 
 ### Classes
 
-#### Public Classes
-
 * [`lldpd`](#lldpd): A module to manage lldpd and related facts
-
-#### Private Classes
-
-* `lldpd::install`: Manages the lldpd package
-* `lldpd::repo`: Manages the yum or apt repositories
-* `lldpd::service`: Manages the lldpd service + facts
 
 ## Classes
 
-### `lldpd`
+### <a name="lldpd"></a>`lldpd`
 
 lldpd
 
@@ -32,15 +24,39 @@ include lldpd
 
 #### Parameters
 
-The following parameters are available in the `lldpd` class.
+The following parameters are available in the `lldpd` class:
 
-##### `manage_repo`
+* [`ensure`](#ensure)
+* [`manage_service`](#manage_service)
+* [`manage_repo`](#manage_repo)
+* [`repourl`](#repourl)
+* [`gpgkeyfingerprint`](#gpgkeyfingerprint)
+
+##### <a name="ensure"></a>`ensure`
+
+Data type: `Enum['present', 'absent', 'latest']`
+
+Install or deinstall all related components
+
+Default value: `'present'`
+
+##### <a name="manage_service"></a>`manage_service`
+
+Data type: `Boolean`
+
+Enable or disable the service management
+
+Default value: ``true``
+
+##### <a name="manage_repo"></a>`manage_repo`
 
 Data type: `Boolean`
 
 Enable or disable the repository setup
 
-##### `repourl`
+Default value: ``false``
+
+##### <a name="repourl"></a>`repourl`
 
 Data type: `Optional[String[1]]`
 
@@ -48,19 +64,11 @@ String that completes the url for the upstream repository
 
 Default value: ``undef``
 
-##### `gpgkeyfingerprint`
+##### <a name="gpgkeyfingerprint"></a>`gpgkeyfingerprint`
 
-Data type: `String[1]`
+Data type: `Optional[String[40]]`
 
 String with the ID from the gpg key that signed the packages
 
-Default value: `'EF795E4D26E48F1D7661267B431C37A97C3E114B'`
-
-##### `ensure`
-
-Data type: `Enum['present', 'absent', 'latest']`
-
-Install or deinstall all related components
-
-Default value: `'present'`
+Default value: ``undef``
 
