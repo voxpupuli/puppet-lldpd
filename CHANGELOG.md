@@ -4,7 +4,15 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v3.0.0](https://github.com/voxpupuli/puppet-lldpd/tree/v3.0.0) (2021-04-18)
+## [v3.0.1](https://github.com/voxpupuli/puppet-lldpd/tree/v3.0.1) (2021-07-29)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v3.0.0...v3.0.1)
+
+**Merged pull requests:**
+
+- switch from camptocamp/systemd to voxpupuli/systemd [\#105](https://github.com/voxpupuli/puppet-lldpd/pull/105) ([bastelfreak](https://github.com/bastelfreak))
+
+## [v3.0.0](https://github.com/voxpupuli/puppet-lldpd/tree/v3.0.0) (2021-06-05)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v2.3.0...v3.0.0)
 
