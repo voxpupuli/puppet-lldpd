@@ -4,7 +4,13 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v3.0.1](https://github.com/voxpupuli/puppet-lldpd/tree/v3.0.1) (2021-07-29)
+## [v3.0.2](https://github.com/voxpupuli/puppet-lldpd/tree/v3.0.2) (2021-07-30)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v3.0.1...v3.0.2)
+
+the 3.0.1 release wasn't successful because the CI pipeline failed. 3.0.2 contains the same Puppet code + a fixed Gemfile
+
+## [v3.0.1](https://github.com/voxpupuli/puppet-lldpd/tree/v3.0.1) (2021-07-30)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v3.0.0...v3.0.1)
 
