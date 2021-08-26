@@ -4,7 +4,15 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v3.0.2](https://github.com/voxpupuli/puppet-lldpd/tree/v3.0.2) (2021-07-30)
+## [v3.0.3](https://github.com/voxpupuli/puppet-lldpd/tree/v3.0.3) (2021-08-26)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v3.0.2...v3.0.3)
+
+**Merged pull requests:**
+
+- Allow up-to-date depenencies [\#110](https://github.com/voxpupuli/puppet-lldpd/pull/110) ([smortex](https://github.com/smortex))
+
+## [v3.0.2](https://github.com/voxpupuli/puppet-lldpd/tree/v3.0.2) (2021-07-31)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v3.0.1...v3.0.2)
 
