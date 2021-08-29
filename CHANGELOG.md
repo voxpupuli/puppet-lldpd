@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v3.1.0](https://github.com/voxpupuli/puppet-lldpd/tree/v3.1.0) (2021-08-29)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v3.0.3...v3.1.0)
+
+**Implemented enhancements:**
+
+- Enable Gentoo support [\#114](https://github.com/voxpupuli/puppet-lldpd/pull/114) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [v3.0.3](https://github.com/voxpupuli/puppet-lldpd/tree/v3.0.3) (2021-08-26)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v3.0.2...v3.0.3)
