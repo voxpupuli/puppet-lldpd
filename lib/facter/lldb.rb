@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'facter'
 require 'json'
 
@@ -7,13 +9,11 @@ Facter.add(:lldp) do
   end
 
   setcode do
-    begin
-      data = Facter::Util::Resolution.exec('lldpctl -f json')
-      json = JSON.parse(data)
-      json['lldp']
-    rescue StandardError => e
-      Facter.warn("Failed to parse lldpctl -f json: #{e.class}: #{e}")
-      Facter.debug(e.backtrace.join("\n\t"))
-    end
+    data = Facter::Util::Resolution.exec('lldpctl -f json')
+    json = JSON.parse(data)
+    json['lldp']
+  rescue StandardError => e
+    Facter.warn("Failed to parse lldpctl -f json: #{e.class}: #{e}")
+    Facter.debug(e.backtrace.join("\n\t"))
   end
 end
