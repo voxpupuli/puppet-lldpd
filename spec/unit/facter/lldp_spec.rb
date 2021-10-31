@@ -1,81 +1,83 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
-command_output = <<-STDOUT
-{
-  "lldp": {
-    "interface": {
-      "eno1": {
-        "via": "LLDP",
-        "rid": "1",
-        "age": "6 days, 08:09:50",
-        "chassis": {
-          "router": {
+command_output = <<~STDOUT
+  {
+    "lldp": {
+      "interface": {
+        "eno1": {
+          "via": "LLDP",
+          "rid": "1",
+          "age": "6 days, 08:09:50",
+          "chassis": {
+            "router": {
+              "id": {
+                "type": "mac",
+                "value": "10:0e:7e:aa:aa:aa"
+              },
+              "descr": "example router",
+              "mgmt-ip": "192.0.2.1",
+              "capability": [
+                {
+                  "type": "Bridge",
+                  "enabled": true
+                },
+                {
+                  "type": "Router",
+                  "enabled": true
+                }
+              ]
+            }
+          },
+          "port": {
             "id": {
-              "type": "mac",
-              "value": "10:0e:7e:aa:aa:aa"
+              "type": "ifname",
+              "value": "ge-1/0/1"
             },
-            "descr": "example router",
-            "mgmt-ip": "192.0.2.1",
+            "descr": "host:eno1 {#}",
+            "ttl": "120",
+            "mfs": "9192",
+            "auto-negotiation": {
+              "supported": true,
+              "enabled": true,
+              "advertised": {
+                "type": "1000Base-T",
+                "hd": false,
+                "fd": true
+              },
+              "current": "unknown"
+            }
+          },
+          "vlan": {
+            "vlan-id": "42",
+            "pvid": true,
+            "value": "vlan-42"
+          },
+          "lldp-med": {
+            "device-type": "Network Connectivity Device",
             "capability": [
               {
-                "type": "Bridge",
-                "enabled": true
+                "type": "Capabilities",
+                "available": true
               },
               {
-                "type": "Router",
-                "enabled": true
+                "type": "Policy",
+                "available": true
+              },
+              {
+                "type": "Location",
+                "available": true
+              },
+              {
+                "type": "MDI/PSE",
+                "available": true
               }
             ]
           }
-        },
-        "port": {
-          "id": {
-            "type": "ifname",
-            "value": "ge-1/0/1"
-          },
-          "descr": "host:eno1 {#}",
-          "ttl": "120",
-          "mfs": "9192",
-          "auto-negotiation": {
-            "supported": true,
-            "enabled": true,
-            "advertised": {
-              "type": "1000Base-T",
-              "hd": false,
-              "fd": true
-            },
-            "current": "unknown"
-          }
-        },
-        "vlan": {
-          "vlan-id": "42",
-          "pvid": true,
-          "value": "vlan-42"
-        },
-        "lldp-med": {
-          "device-type": "Network Connectivity Device",
-          "capability": [
-            {
-              "type": "Capabilities",
-              "available": true
-            },
-            {
-              "type": "Policy",
-              "available": true
-            },
-            {
-              "type": "Location",
-              "available": true
-            },
-            {
-              "type": "MDI/PSE",
-              "available": true
-            }
-          ]
         }
       }
     }
   }
-}
 STDOUT
 fact_result = {
   'interface' => {
@@ -128,21 +130,25 @@ fact_result = {
 }
 describe Facter::Util::Fact.to_s do
   before { Facter.clear }
+
   context 'lldpctl not in path' do
     before do
-      allow(Facter::Util::Resolution).to receive(:which).with('lldpctl') { nil }
+      allow(Facter::Util::Resolution).to receive(:which).with('lldpctl').and_return(nil)
     end
+
     it { expect(Facter.fact(:lldp).value).to eq(nil) }
   end
 
   context 'valid run' do
     before do
-      allow(Facter::Util::Resolution).to receive(:which).with('lldpctl') { '/usr/sbin/lldpctl' }
+      allow(Facter::Util::Resolution).to receive(:which).with('lldpctl').and_return('/usr/sbin/lldpctl')
     end
+
     context 'lldp' do
       before do
         allow(Facter::Util::Resolution).to receive(:exec).with('lldpctl -f json') { command_output }
       end
+
       it { expect(Facter.fact(:lldp).value).to eq fact_result }
     end
   end
