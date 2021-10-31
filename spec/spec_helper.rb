@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Managed by modulesync - DO NOT EDIT
 # https://voxpupuli.org/docs/updating-files-managed-with-modulesync/
 
@@ -9,9 +11,7 @@ require 'voxpupuli/test/spec_helper'
 
 if File.exist?(File.join(__dir__, 'default_module_facts.yml'))
   facts = YAML.safe_load(File.read(File.join(__dir__, 'default_module_facts.yml')))
-  if facts
-    facts.each do |name, value|
-      add_custom_fact name.to_sym, value
-    end
+  facts&.each do |name, value|
+    add_custom_fact name.to_sym, value
   end
 end
