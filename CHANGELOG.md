@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v3.2.0](https://github.com/voxpupuli/puppet-lldpd/tree/v3.2.0) (2021-12-03)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v3.1.0...v3.2.0)
+
+**Implemented enhancements:**
+
+- Add Debian 11 support [\#118](https://github.com/voxpupuli/puppet-lldpd/pull/118) ([bastelfreak](https://github.com/bastelfreak))
+- Add RHEL 8 support [\#117](https://github.com/voxpupuli/puppet-lldpd/pull/117) ([yakatz](https://github.com/yakatz))
+
+**Closed issues:**
+
+- Error handling in `lldp2facts` [\#66](https://github.com/voxpupuli/puppet-lldpd/issues/66)
+
 ## [v3.1.0](https://github.com/voxpupuli/puppet-lldpd/tree/v3.1.0) (2021-08-29)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v3.0.3...v3.1.0)
