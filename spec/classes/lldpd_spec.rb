@@ -6,24 +6,18 @@ describe 'lldpd' do
   on_supported_os.each do |os, facts|
     context "on #{os}" do
       let :facts do
-        facts
+        facts.merge({systemd: true})
       end
 
       context 'with all defaults' do
-        systemd = case facts[:os]['family']
-                  when 'Archlinux'
-                    true
-                  when 'RedHat'
-                    facts[:os]['release']['major'].to_i >= 7
-                  else
-                    false
-                  end
-        facts[:systemd] = systemd
-
         it { is_expected.to compile.with_all_deps }
         it { is_expected.to contain_class('lldpd') }
         it { is_expected.to contain_service('lldpd') }
         it { is_expected.to contain_package('lldpd') }
+        it { is_expected.to contain_systemd__unit_file('lldp2facts.service') }
+        it { is_expected.to contain_systemd__unit_file('lldp2facts.timer') }
+        it { is_expected.to contain_file('/etc/cron.d/lldp2facts').with_ensure('absent') }
+        it { is_expected.to contain_file('/usr/local/bin/lldp2facts').with_ensure('absent') }
 
         if facts[:os]['family'] == 'RedHat' && facts[:os]['release']['major'].to_i < 27
           it { is_expected.to contain_yumrepo('lldpd') }
@@ -33,8 +27,13 @@ describe 'lldpd' do
 
         if facts[:os]['family'] == 'Debian' && facts[:os]['release']['full'] != '18.04'
           it { is_expected.to contain_apt__source('lldpd') }
+          it { is_expected.to contain_apt__key('EF795E4D26E48F1D7661267B431C37A97C3E114B').with_ensure('absent') }
+          it { is_expected.to contain_file('/usr/share/keyrings/lldpd.gpg') }
+          it { is_expected.to contain_file('/etc/apt/trusted.gpg.d/home_vbernat.gpg').with_ensure('absent') }
+          it { is_expected.to contain_file('/etc/apt/trusted.gpg.d/home_vbernat.gpg~').with_ensure('absent') }
         else
           it { is_expected.not_to contain_apt__source('lldpd') }
+          it { is_expected.not_to contain_apt__key('EF795E4D26E48F1D7661267B431C37A97C3E114B') }
         end
       end
     end

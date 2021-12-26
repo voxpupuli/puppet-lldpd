@@ -31,14 +31,31 @@ class lldpd (
         if ! $gpgkeyfingerprint {
           fail('you must specify a `$gpgkeyfingerprint` when using `$manage_repo` on debian')
         }
+        # place the key in the keyrings directory where apt won't search for keys for all repos
+        file { '/usr/share/keyrings/lldpd.gpg':
+          source => "https://download.opensuse.org/repositories/home:/vbernat/${repourl}/Release.key",
+          owner  => 'root',
+          group  => 'root',
+          mode   => '0644',
+        }
+        # purge old key files that we installed in previous releases
+        $old_keys = ['/etc/apt/trusted.gpg.d/home_vbernat.gpg', '/etc/apt/trusted.gpg.d/home_vbernat.gpg~',]
+        $old_keys.each |Stdlib::Absolutepath $key| {
+          file { $key:
+            ensure => 'absent',
+          }
+        }
+        # previously managed by apt::key, we need to purge it from the global keyring in /etc/apt/trusted.gpg
+        include apt # required so apt::key can access variables from init.pp
+        apt::key { 'EF795E4D26E48F1D7661267B431C37A97C3E114B':
+          ensure => 'absent',
+        }
         apt::source { 'lldpd':
           location => "http://download.opensuse.org/repositories/home:/vbernat/${repourl}",
           release  => ' ',
           repos    => '/',
-          key      => {
-            id     => $gpgkeyfingerprint,
-            source => "http://download.opensuse.org/repositories/home:/vbernat/${repourl}/Release.key",
-          },
+          keyring  => '/usr/share/keyrings/lldpd.gpg',
+          require  => File['/usr/share/keyrings/lldpd.gpg'],
         }
       }
       default: {
