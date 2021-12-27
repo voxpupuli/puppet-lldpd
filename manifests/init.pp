@@ -32,7 +32,8 @@ class lldpd (
           fail('you must specify a `$gpgkeyfingerprint` when using `$manage_repo` on debian')
         }
         # place the key in the keyrings directory where apt won't search for keys for all repos
-        file { '/usr/share/keyrings/lldpd.gpg':
+        # ascii encoded files need to end with *.asc, binary files with .gpg...
+        file { '/usr/share/keyrings/lldpd.asc':
           source => "https://download.opensuse.org/repositories/home:/vbernat/${repourl}/Release.key",
           owner  => 'root',
           group  => 'root',
@@ -51,11 +52,11 @@ class lldpd (
           ensure => 'absent',
         }
         apt::source { 'lldpd':
-          location => "http://download.opensuse.org/repositories/home:/vbernat/${repourl}",
+          location => "https://download.opensuse.org/repositories/home:/vbernat/${repourl}",
           release  => ' ',
           repos    => '/',
-          keyring  => '/usr/share/keyrings/lldpd.gpg',
-          require  => File['/usr/share/keyrings/lldpd.gpg'],
+          keyring  => '/usr/share/keyrings/lldpd.asc',
+          require  => File['/usr/share/keyrings/lldpd.asc'],
         }
       }
       default: {

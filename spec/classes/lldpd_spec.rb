@@ -6,7 +6,7 @@ describe 'lldpd' do
   on_supported_os.each do |os, facts|
     context "on #{os}" do
       let :facts do
-        facts.merge({systemd: true})
+        facts.merge({ systemd: true })
       end
 
       context 'with all defaults' do
@@ -28,7 +28,7 @@ describe 'lldpd' do
         if facts[:os]['family'] == 'Debian' && facts[:os]['release']['full'] != '18.04'
           it { is_expected.to contain_apt__source('lldpd') }
           it { is_expected.to contain_apt__key('EF795E4D26E48F1D7661267B431C37A97C3E114B').with_ensure('absent') }
-          it { is_expected.to contain_file('/usr/share/keyrings/lldpd.gpg') }
+          it { is_expected.to contain_file('/usr/share/keyrings/lldpd.asc') }
           it { is_expected.to contain_file('/etc/apt/trusted.gpg.d/home_vbernat.gpg').with_ensure('absent') }
           it { is_expected.to contain_file('/etc/apt/trusted.gpg.d/home_vbernat.gpg~').with_ensure('absent') }
         else
