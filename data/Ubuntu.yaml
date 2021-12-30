@@ -1,0 +1,2 @@
+---
+lldpd::repourl: "x%{facts.os.name}_%{facts.os.release.major}"
