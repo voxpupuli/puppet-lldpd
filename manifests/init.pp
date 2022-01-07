@@ -40,12 +40,10 @@ class lldpd (
           mode   => '0644',
         }
         # purge old key files that we installed in previous releases
-        $old_keys = ['/etc/apt/trusted.gpg.d/home_vbernat.gpg', '/etc/apt/trusted.gpg.d/home_vbernat.gpg~',]
-        $old_keys.each |Stdlib::Absolutepath $key| {
-          file { $key:
-            ensure => 'absent',
-          }
+        file { ['/etc/apt/trusted.gpg.d/home_vbernat.gpg', '/etc/apt/trusted.gpg.d/home_vbernat.gpg~']:
+          ensure => absent,
         }
+
         # previously managed by apt::key, we need to purge it from the global keyring in /etc/apt/trusted.gpg
         include apt # required so apt::key can access variables from init.pp
         apt::key { 'EF795E4D26E48F1D7661267B431C37A97C3E114B':
