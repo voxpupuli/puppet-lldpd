@@ -4,7 +4,21 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v3.2.0](https://github.com/voxpupuli/puppet-lldpd/tree/v3.2.0) (2021-12-03)
+## [v3.3.0](https://github.com/voxpupuli/puppet-lldpd/tree/v3.3.0) (2022-01-07)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v3.2.0...v3.3.0)
+
+**Implemented enhancements:**
+
+- yumrepo: Set gpgcheck to 1 [\#124](https://github.com/voxpupuli/puppet-lldpd/pull/124) ([bastelfreak](https://github.com/bastelfreak))
+- Add AlmaLinux support [\#123](https://github.com/voxpupuli/puppet-lldpd/pull/123) ([bastelfreak](https://github.com/bastelfreak))
+- Apt: Use gpg repo key only for lldpd repository [\#121](https://github.com/voxpupuli/puppet-lldpd/pull/121) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Configure external repo for tests and cleanup hiera [\#122](https://github.com/voxpupuli/puppet-lldpd/pull/122) ([bastelfreak](https://github.com/bastelfreak))
+
+## [v3.2.0](https://github.com/voxpupuli/puppet-lldpd/tree/v3.2.0) (2021-12-07)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v3.1.0...v3.2.0)
 
