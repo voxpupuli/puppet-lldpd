@@ -21,10 +21,11 @@ class lldpd (
     case $facts['os']['family'] {
       'RedHat': {
         yumrepo { 'lldpd':
-          ensure  => 'present',
-          descr   => 'lldpd toolset',
-          gpgkey  => "https://download.opensuse.org/repositories/home:/vbernat/${repourl}/repodata/repomd.xml.key",
-          baseurl => "https://download.opensuse.org/repositories/home:/vbernat/${repourl}/",
+          ensure   => 'present',
+          descr    => 'lldpd toolset',
+          gpgkey   => "https://download.opensuse.org/repositories/home:/vbernat/${repourl}/repodata/repomd.xml.key",
+          baseurl  => "https://download.opensuse.org/repositories/home:/vbernat/${repourl}/",
+          gpgcheck => 1,
         }
       }
       'Debian': {
