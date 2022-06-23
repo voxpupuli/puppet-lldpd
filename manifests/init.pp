@@ -41,6 +41,7 @@ class lldpd (
           mode           => '0644',
           checksum_value => '2e532e3f800b788b0248da86b1cd722e58e9c99413912fd029c20d88d55ebadc',
           checksum       => 'sha256',
+          before         => [Class['apt'], Apt::Setting['conf-update-stamp'], File['preferences'],],
         }
         # purge old key files that we installed in previous releases
         file { ['/etc/apt/trusted.gpg.d/home_vbernat.gpg', '/etc/apt/trusted.gpg.d/home_vbernat.gpg~']:
