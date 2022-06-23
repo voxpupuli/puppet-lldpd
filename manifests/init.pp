@@ -35,10 +35,12 @@ class lldpd (
         # place the key in the keyrings directory where apt won't search for keys for all repos
         # ascii encoded files need to end with *.asc, binary files with .gpg...
         file { '/usr/share/keyrings/lldpd.asc':
-          source => "https://download.opensuse.org/repositories/home:/vbernat/${repourl}/Release.key",
-          owner  => 'root',
-          group  => 'root',
-          mode   => '0644',
+          source         => "https://download.opensuse.org/repositories/home:/vbernat/${repourl}/Release.key",
+          owner          => 'root',
+          group          => 'root',
+          mode           => '0644',
+          checksum_value => '2e532e3f800b788b0248da86b1cd722e58e9c99413912fd029c20d88d55ebadc',
+          checksum       => 'sha256',
         }
         # purge old key files that we installed in previous releases
         file { ['/etc/apt/trusted.gpg.d/home_vbernat.gpg', '/etc/apt/trusted.gpg.d/home_vbernat.gpg~']:
