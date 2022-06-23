@@ -10,12 +10,14 @@
 # @param manage_repo Enable or disable the repository setup
 # @param repourl String that completes the url for the upstream repository
 # @param gpgkeyfingerprint String with the ID from the gpg key that signed the packages
+# @param apt_key_hash the sha256 hashsum for the GPG key file that was used to sign the packages
 class lldpd (
   Enum['present', 'absent', 'latest'] $ensure            = 'present',
   Boolean                             $manage_repo       = false,
   Boolean                             $manage_service    = true,
   Optional[String[1]]                 $repourl           = undef,
   Optional[String[40]]                $gpgkeyfingerprint = undef,
+  String[1]                           $apt_key_hash      = '2e532e3f800b788b0248da86b1cd722e58e9c99413912fd029c20d88d55ebadc',
 ) {
   if $manage_repo {
     case $facts['os']['family'] {
@@ -35,10 +37,12 @@ class lldpd (
         # place the key in the keyrings directory where apt won't search for keys for all repos
         # ascii encoded files need to end with *.asc, binary files with .gpg...
         file { '/usr/share/keyrings/lldpd.asc':
-          source => "https://download.opensuse.org/repositories/home:/vbernat/${repourl}/Release.key",
-          owner  => 'root',
-          group  => 'root',
-          mode   => '0644',
+          source         => "https://download.opensuse.org/repositories/home:/vbernat/${repourl}/Release.key",
+          owner          => 'root',
+          group          => 'root',
+          mode           => '0644',
+          checksum_value => $apt_key_hash,
+          checksum       => 'sha256',
         }
         # purge old key files that we installed in previous releases
         file { ['/etc/apt/trusted.gpg.d/home_vbernat.gpg', '/etc/apt/trusted.gpg.d/home_vbernat.gpg~']:
