@@ -41,7 +41,7 @@ class lldpd (
           mode           => '0644',
           checksum_value => '2e532e3f800b788b0248da86b1cd722e58e9c99413912fd029c20d88d55ebadc',
           checksum       => 'sha256',
-          before         => [Class['apt'], Apt::Setting['conf-update-stamp'], File['preferences'],],
+          #before         => [Class['apt'], Apt::Setting['conf-update-stamp'], File['preferences'],],
         }
         # purge old key files that we installed in previous releases
         file { ['/etc/apt/trusted.gpg.d/home_vbernat.gpg', '/etc/apt/trusted.gpg.d/home_vbernat.gpg~']:
@@ -49,16 +49,15 @@ class lldpd (
         }
 
         # previously managed by apt::key, we need to purge it from the global keyring in /etc/apt/trusted.gpg
-        # include apt # required so apt::key can access variables from init.pp
-        apt::key { 'EF795E4D26E48F1D7661267B431C37A97C3E114B':
-          ensure => 'absent',
-        }
+        #include apt # required so apt::key can access variables from init.pp
+        #apt::key { 'EF795E4D26E48F1D7661267B431C37A97C3E114B':
+          #ensure => 'absent',
+          #}
         apt::source { 'lldpd':
           location => "https://download.opensuse.org/repositories/home:/vbernat/${repourl}",
           release  => ' ',
           repos    => '/',
           keyring  => '/usr/share/keyrings/lldpd.asc',
-          require  => [File['/usr/share/keyrings/lldpd.asc'], Class['apt::update']],
         }
       }
       default: {
