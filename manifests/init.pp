@@ -58,7 +58,7 @@ class lldpd (
           release  => ' ',
           repos    => '/',
           keyring  => '/usr/share/keyrings/lldpd.asc',
-          require  => File['/usr/share/keyrings/lldpd.asc'],
+          require  => [File['/usr/share/keyrings/lldpd.asc'], Class['apt::update']],
         }
       }
       default: {
