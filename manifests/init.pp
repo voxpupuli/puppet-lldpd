@@ -49,7 +49,7 @@ class lldpd (
         }
 
         # previously managed by apt::key, we need to purge it from the global keyring in /etc/apt/trusted.gpg
-        include apt # required so apt::key can access variables from init.pp
+        # include apt # required so apt::key can access variables from init.pp
         apt::key { 'EF795E4D26E48F1D7661267B431C37A97C3E114B':
           ensure => 'absent',
         }
