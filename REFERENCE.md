@@ -31,7 +31,6 @@ The following parameters are available in the `lldpd` class:
 * [`manage_repo`](#manage_repo)
 * [`repourl`](#repourl)
 * [`apt_key_hash`](#apt_key_hash)
-* [`gpgkeyfingerprint`](#gpgkeyfingerprint)
 
 ##### <a name="ensure"></a>`ensure`
 
@@ -72,12 +71,4 @@ Data type: `String[1]`
 the sha256 hashsum for the GPG key file that was used to sign the packages
 
 Default value: `'2e532e3f800b788b0248da86b1cd722e58e9c99413912fd029c20d88d55ebadc'`
-
-##### <a name="gpgkeyfingerprint"></a>`gpgkeyfingerprint`
-
-Data type: `Optional[String[40]]`
-
-
-
-Default value: ``undef``
 
