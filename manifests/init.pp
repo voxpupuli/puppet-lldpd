@@ -72,12 +72,4 @@ class lldpd (
       enable => true,
     }
   }
-  # TODO: remove this at some point...
-  # clean resources used by version < 3.0.0
-  file { ['/usr/local/bin/lldp2facts', '/etc/cron.d/lldp2facts']:
-    ensure => absent,
-  }
-  systemd::unit_file { ['lldp2facts.service', 'lldp2facts.timer']:
-    ensure => absent,
-  }
 }
