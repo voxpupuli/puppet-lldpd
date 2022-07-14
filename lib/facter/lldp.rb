@@ -18,12 +18,18 @@ Facter.add(:lldp) do
       raise MalformedDataError, 'no lldp interface data found' if json.empty?
 
       fact_data['interfaces'] = {}
-      json.each do |iface_h|
-        ifaces = iface_h.keys
-        raise MalformedDataError, 'expected exactly one key per interface object' unless ifaces.size == 1
+      # if lldp detects only a single interface, we get a hash with data for that interface
+      # for multiple interfaces we get an array with one hash
+      if json.instance_of?(Hash)
+        fact_data['interfaces'] = json
+      else
+        json.each do |iface_h|
+          ifaces = iface_h.keys
+          raise MalformedDataError, 'expected exactly one key per interface object' unless ifaces.size == 1
 
-        iface = ifaces.first
-        fact_data['interfaces'][iface] = iface_h[iface]
+          iface = ifaces.first
+          fact_data['interfaces'][iface] = iface_h[iface]
+        end
       end
     rescue MalformedDataError => e
       Facter.warn("invalid or malformed lldp data: #{e.class}: #{e}")
