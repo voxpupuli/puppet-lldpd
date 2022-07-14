@@ -9,14 +9,12 @@
 # @param manage_service Enable or disable the service management
 # @param manage_repo Enable or disable the repository setup
 # @param repourl String that completes the url for the upstream repository
-# @param gpgkeyfingerprint String with the ID from the gpg key that signed the packages
 # @param apt_key_hash the sha256 hashsum for the GPG key file that was used to sign the packages
 class lldpd (
   Enum['present', 'absent', 'latest'] $ensure            = 'present',
   Boolean                             $manage_repo       = false,
   Boolean                             $manage_service    = true,
   Optional[String[1]]                 $repourl           = undef,
-  Optional[String[40]]                $gpgkeyfingerprint = undef,
   String[1]                           $apt_key_hash      = '2e532e3f800b788b0248da86b1cd722e58e9c99413912fd029c20d88d55ebadc',
 ) {
   if $manage_repo {
@@ -31,9 +29,6 @@ class lldpd (
         }
       }
       'Debian': {
-        if ! $gpgkeyfingerprint {
-          fail('you must specify a `$gpgkeyfingerprint` when using `$manage_repo` on debian')
-        }
         # place the key in the keyrings directory where apt won't search for keys for all repos
         # ascii encoded files need to end with *.asc, binary files with .gpg...
         file { '/usr/share/keyrings/lldpd.asc':
