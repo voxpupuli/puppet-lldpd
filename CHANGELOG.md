@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v4.0.0](https://github.com/voxpupuli/puppet-lldpd/tree/v4.0.0) (2022-07-14)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v3.3.0...v4.0.0)
+
+**Breaking changes:**
+
+- drop legacy timer code [\#133](https://github.com/voxpupuli/puppet-lldpd/pull/133) ([bastelfreak](https://github.com/bastelfreak))
+- Drop legacy gpgkeyfingerprint parameter [\#132](https://github.com/voxpupuli/puppet-lldpd/pull/132) ([bastelfreak](https://github.com/bastelfreak))
+- restructure fact data, fix filename spelling [\#126](https://github.com/voxpupuli/puppet-lldpd/pull/126) ([foxxx0](https://github.com/foxxx0))
+
+**Implemented enhancements:**
+
+- Add Rocky Linux support [\#127](https://github.com/voxpupuli/puppet-lldpd/pull/127) ([bastelfreak](https://github.com/bastelfreak))
+
+**Fixed bugs:**
+
+- new fact doesn't work on servers with a single interface [\#129](https://github.com/voxpupuli/puppet-lldpd/issues/129)
+- fact: Add support for single interfaces [\#131](https://github.com/voxpupuli/puppet-lldpd/pull/131) ([bastelfreak](https://github.com/bastelfreak))
+- apt: set gpg key checksum ensure=file [\#130](https://github.com/voxpupuli/puppet-lldpd/pull/130) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [v3.3.0](https://github.com/voxpupuli/puppet-lldpd/tree/v3.3.0) (2022-01-07)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v3.2.0...v3.3.0)
