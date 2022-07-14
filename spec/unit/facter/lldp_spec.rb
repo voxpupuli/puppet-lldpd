@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
-command_output = <<~STDOUT
+command_output1 = <<~STDOUT1
   {
     "lldp": {
       "interface": [
@@ -80,8 +80,37 @@ command_output = <<~STDOUT
       ]
     }
   }
-STDOUT
-fact_result = {
+STDOUT1
+command_output2 = <<~STDOUT2
+  {
+    "lldp": {
+      "interface": {
+        "enp3s0": {
+          "via": "LLDP",
+          "rid": "1",
+          "age": "0 day, 01:01:52",
+          "chassis": {
+            "id": {
+              "type": "mac",
+              "value": "44:94:fc:9d:55:0a"
+            },
+            "mgmt-ip": "192.168.178.21",
+            "mgmt-iface": "51"
+          },
+          "port": {
+            "id": {
+              "type": "local",
+              "value": "g17"
+            },
+            "ttl": "120"
+          }
+        }
+      }
+    }
+  }
+
+STDOUT2
+fact_result1 = {
   'interfaces' => {
     'eno1' => {
       'age' => '6 days, 08:09:50',
@@ -130,6 +159,12 @@ fact_result = {
     }
   }
 }
+# to create it:
+#   require 'json'
+#   value = `lldpctl -f json`
+#   puts JSON.parse(value)
+fact_result2 = { 'interfaces' => { 'enp3s0' => { 'via' => 'LLDP', 'rid' => '1', 'age' => '0 day, 01:01:52', 'chassis' => { 'id' => { 'type' => 'mac', 'value' => '44:94:fc:9d:55:0a' }, 'mgmt-ip' => '192.168.178.21', 'mgmt-iface' => '51' }, 'port' => { 'id' => { 'type' => 'local', 'value' => 'g17' }, 'ttl' => '120' } } } }
+
 describe Facter::Util::Fact.to_s do
   before { Facter.clear }
 
@@ -146,12 +181,20 @@ describe Facter::Util::Fact.to_s do
       allow(Facter::Util::Resolution).to receive(:which).with('lldpctl').and_return('/usr/sbin/lldpctl')
     end
 
-    context 'lldp' do
+    context 'lldp multiple interfaces' do
       before do
-        allow(Facter::Util::Resolution).to receive(:exec).with('lldpctl -f json') { command_output }
+        allow(Facter::Util::Resolution).to receive(:exec).with('lldpctl -f json') { command_output1 }
       end
 
-      it { expect(Facter.fact(:lldp).value).to eq fact_result }
+      it { expect(Facter.fact(:lldp).value).to eq fact_result1 }
+    end
+
+    context 'valid single interface' do  # https://github.com/voxpupuli/puppet-lldpd/issues/129
+      before do
+        allow(Facter::Util::Resolution).to receive(:exec).with('lldpctl -f json') { command_output2 }
+      end
+
+      it { expect(Facter.fact(:lldp).value).to eq fact_result2 }
     end
   end
 end
