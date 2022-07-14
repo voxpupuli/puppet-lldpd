@@ -37,6 +37,7 @@ class lldpd (
         # place the key in the keyrings directory where apt won't search for keys for all repos
         # ascii encoded files need to end with *.asc, binary files with .gpg...
         file { '/usr/share/keyrings/lldpd.asc':
+          ensure         => 'file',
           source         => "https://download.opensuse.org/repositories/home:/vbernat/${repourl}/Release.key",
           owner          => 'root',
           group          => 'root',
