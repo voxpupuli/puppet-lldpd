@@ -14,10 +14,6 @@ describe 'lldpd' do
         it { is_expected.to contain_class('lldpd') }
         it { is_expected.to contain_service('lldpd') }
         it { is_expected.to contain_package('lldpd') }
-        it { is_expected.to contain_systemd__unit_file('lldp2facts.service') }
-        it { is_expected.to contain_systemd__unit_file('lldp2facts.timer') }
-        it { is_expected.to contain_file('/etc/cron.d/lldp2facts').with_ensure('absent') }
-        it { is_expected.to contain_file('/usr/local/bin/lldp2facts').with_ensure('absent') }
 
         if facts[:os]['family'] == 'RedHat' && facts[:os]['release']['major'].to_i < 27
           it { is_expected.to contain_yumrepo('lldpd') }
