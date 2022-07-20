@@ -68,8 +68,9 @@ class lldpd (
   }
   if $manage_service {
     service { 'lldpd':
-      ensure => 'running',
-      enable => true,
+      ensure  => 'running',
+      enable  => true,
+      require => Package['lldpd'],
     }
   }
 }
