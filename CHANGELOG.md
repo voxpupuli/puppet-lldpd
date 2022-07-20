@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v4.0.1](https://github.com/voxpupuli/puppet-lldpd/tree/v4.0.1) (2022-07-20)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v4.0.0...v4.0.1)
+
+**Fixed bugs:**
+
+- fix package/service order of operations [\#135](https://github.com/voxpupuli/puppet-lldpd/pull/135) ([jhoblitt](https://github.com/jhoblitt))
+
 ## [v4.0.0](https://github.com/voxpupuli/puppet-lldpd/tree/v4.0.0) (2022-07-14)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v3.3.0...v4.0.0)
