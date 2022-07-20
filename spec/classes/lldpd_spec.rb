@@ -12,7 +12,7 @@ describe 'lldpd' do
       context 'with all defaults' do
         it { is_expected.to compile.with_all_deps }
         it { is_expected.to contain_class('lldpd') }
-        it { is_expected.to contain_service('lldpd') }
+        it { is_expected.to contain_service('lldpd').that_requires('Package[lldpd]') }
         it { is_expected.to contain_package('lldpd') }
 
         if facts[:os]['family'] == 'RedHat' && facts[:os]['release']['major'].to_i < 27
