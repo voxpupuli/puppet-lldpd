@@ -1,6 +1,6 @@
 {
   "name": "puppet-lldpd",
-  "version": "4.0.2",
+  "version": "4.0.3-rc0",
   "author": "Vox Pupuli",
   "summary": "installs, configures, and manages the lldpd daemon from Vincent Bernat",
   "license": "AGPL-3.0",
