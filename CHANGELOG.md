@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v4.0.2](https://github.com/voxpupuli/puppet-lldpd/tree/v4.0.2) (2022-08-28)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v4.0.1...v4.0.2)
+
+**Merged pull requests:**
+
+- puppetlabs/apt: Allow 9.x [\#137](https://github.com/voxpupuli/puppet-lldpd/pull/137) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [v4.0.1](https://github.com/voxpupuli/puppet-lldpd/tree/v4.0.1) (2022-07-20)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v4.0.0...v4.0.1)
