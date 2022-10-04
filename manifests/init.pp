@@ -15,7 +15,7 @@ class lldpd (
   Boolean                             $manage_repo       = false,
   Boolean                             $manage_service    = true,
   Optional[String[1]]                 $repourl           = undef,
-  String[1]                           $apt_key_hash      = '2e532e3f800b788b0248da86b1cd722e58e9c99413912fd029c20d88d55ebadc',
+  String[1]                           $apt_key_hash      = '4f9e668fbdaaedf4fc8d83f4eb98db33553d7f4e1f0bca212d0a7ccc9f1a6adf',
 ) {
   if $manage_repo {
     case $facts['os']['family'] {
