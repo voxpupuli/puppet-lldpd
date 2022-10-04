@@ -1,3 +1,2 @@
 ---
-lldpd::gpgkeyfingerprint: 'EF795E4D26E48F1D7661267B431C37A97C3E114B'
 lldpd::repourl: "Debian_%{facts.os.release.major}"
