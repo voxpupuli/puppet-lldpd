@@ -73,32 +73,6 @@ Fedora 25. Other nodesets are currently not present. The module requires at
 least Puppet 4.9.4 (this is the first version with proper data-in-modules
 support).
 
-
-## Reference
-
-The main class provides an interface that can be used. It can be configured via
-the upcoming parameters. All other classes are internal and can't be accessed
-directly.
-
-### `$manage_repo`
-
-Boolean, if true, the module will setup the upstream repository. Defaults to
-true on Debian and CentOS family.
-
-### `$repourl`
-
-String, part of the upstream repository URL. The module provides sane defaults
-for all repositories. There should be no need to set this parameter.
-
-### `$gpgkeyfingerprint`
-String. The ID from the key that's used to sign the packages. Currently only
-used for the apt repo.
-
-### `$ensure`
-
-String, allowed values are present, absent and latest. This sets the status of
-the lldpd package.
-
 ## Development
 
 This project contains tests for [rspec-puppet](http://rspec-puppet.com/).
