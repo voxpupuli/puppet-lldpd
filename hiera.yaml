@@ -15,8 +15,11 @@ hierarchy:
   - name: 'Distribution Name'
     path: '%{facts.os.name}.yaml'
 
+  - name: 'Operating System Family / Major Version'
+    path: 'osfamily/%{facts.os.family}/%{facts.os.release.major}.yaml'
+
   - name: 'Operating System Family'
-    path: '%{facts.os.family}.yaml'
+    path: 'osfamily/%{facts.os.family}.yaml'
 
   - name: 'common'
     path: 'common.yaml'
