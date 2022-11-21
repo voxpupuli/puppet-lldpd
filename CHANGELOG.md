@@ -12,18 +12,16 @@ These should not affect the functionality of the module.
 
 - Update apt repository key checksums [\#142](https://github.com/voxpupuli/puppet-lldpd/pull/142) ([b4ldr](https://github.com/b4ldr))
 
+**Implemented enhancements:**
+
+- add support for EL9 [\#145](https://github.com/voxpupuli/puppet-lldpd/pull/145) ([jhoblitt](https://github.com/jhoblitt))
+
 **Fixed bugs:**
 
 - puppetlabs-apt: update minimum version from 4.4.0 to 8.1.0 [\#141](https://github.com/voxpupuli/puppet-lldpd/pull/141) ([b4ldr](https://github.com/b4ldr))
 
-**Closed issues:**
-
-- Default apt key checksum mismatch [\#140](https://github.com/voxpupuli/puppet-lldpd/issues/140)
-- Apt::Source\[lldpd\]: has no parameter named 'keyring' [\#139](https://github.com/voxpupuli/puppet-lldpd/issues/139)
-
 **Merged pull requests:**
 
-- add support for EL9 [\#145](https://github.com/voxpupuli/puppet-lldpd/pull/145) ([jhoblitt](https://github.com/jhoblitt))
 - Remove gpgkeyfingerprint leftovers [\#144](https://github.com/voxpupuli/puppet-lldpd/pull/144) ([smortex](https://github.com/smortex))
 
 ## [v4.0.2](https://github.com/voxpupuli/puppet-lldpd/tree/v4.0.2) (2022-08-28)
