@@ -70,5 +70,5 @@ Data type: `String[1]`
 
 the sha256 hashsum for the GPG key file that was used to sign the packages
 
-Default value: `'2e532e3f800b788b0248da86b1cd722e58e9c99413912fd029c20d88d55ebadc'`
+Default value: `'4f9e668fbdaaedf4fc8d83f4eb98db33553d7f4e1f0bca212d0a7ccc9f1a6adf'`
 
