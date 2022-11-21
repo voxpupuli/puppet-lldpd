@@ -15,7 +15,7 @@ describe 'lldpd' do
         it { is_expected.to contain_service('lldpd').that_requires('Package[lldpd]') }
         it { is_expected.to contain_package('lldpd') }
 
-        if facts[:os]['family'] == 'RedHat' && facts[:os]['release']['major'].to_i < 27
+        if facts[:os]['family'] == 'RedHat' && facts[:os]['release']['major'].to_i < 9
           it { is_expected.to contain_yumrepo('lldpd') }
         else
           it { is_expected.not_to contain_yumrepo('lldpd') }
