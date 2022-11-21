@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v5.0.0](https://github.com/voxpupuli/puppet-lldpd/tree/v5.0.0) (2022-11-21)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v4.0.2...v5.0.0)
+
+**Breaking changes:**
+
+- Update apt repository key checksums [\#142](https://github.com/voxpupuli/puppet-lldpd/pull/142) ([b4ldr](https://github.com/b4ldr))
+
+**Fixed bugs:**
+
+- puppetlabs-apt: update minimum version from 4.4.0 to 8.1.0 [\#141](https://github.com/voxpupuli/puppet-lldpd/pull/141) ([b4ldr](https://github.com/b4ldr))
+
+**Closed issues:**
+
+- Default apt key checksum mismatch [\#140](https://github.com/voxpupuli/puppet-lldpd/issues/140)
+- Apt::Source\[lldpd\]: has no parameter named 'keyring' [\#139](https://github.com/voxpupuli/puppet-lldpd/issues/139)
+
+**Merged pull requests:**
+
+- add support for EL9 [\#145](https://github.com/voxpupuli/puppet-lldpd/pull/145) ([jhoblitt](https://github.com/jhoblitt))
+- Remove gpgkeyfingerprint leftovers [\#144](https://github.com/voxpupuli/puppet-lldpd/pull/144) ([smortex](https://github.com/smortex))
+
 ## [v4.0.2](https://github.com/voxpupuli/puppet-lldpd/tree/v4.0.2) (2022-08-28)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v4.0.1...v4.0.2)
