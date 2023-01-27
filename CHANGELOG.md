@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v5.1.0](https://github.com/voxpupuli/puppet-lldpd/tree/v5.1.0) (2023-01-27)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v5.0.0...v5.1.0)
+
+**Implemented enhancements:**
+
+- bump puppet/systemd to \< 5.0.0 [\#148](https://github.com/voxpupuli/puppet-lldpd/pull/148) ([jhoblitt](https://github.com/jhoblitt))
+
 ## [v5.0.0](https://github.com/voxpupuli/puppet-lldpd/tree/v5.0.0) (2022-11-21)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v4.0.2...v5.0.0)
