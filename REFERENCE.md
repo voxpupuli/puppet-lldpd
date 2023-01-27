@@ -26,13 +26,13 @@ include lldpd
 
 The following parameters are available in the `lldpd` class:
 
-* [`ensure`](#ensure)
-* [`manage_service`](#manage_service)
-* [`manage_repo`](#manage_repo)
-* [`repourl`](#repourl)
-* [`apt_key_hash`](#apt_key_hash)
+* [`ensure`](#-lldpd--ensure)
+* [`manage_service`](#-lldpd--manage_service)
+* [`manage_repo`](#-lldpd--manage_repo)
+* [`repourl`](#-lldpd--repourl)
+* [`apt_key_hash`](#-lldpd--apt_key_hash)
 
-##### <a name="ensure"></a>`ensure`
+##### <a name="-lldpd--ensure"></a>`ensure`
 
 Data type: `Enum['present', 'absent', 'latest']`
 
@@ -40,31 +40,31 @@ Install or deinstall all related components
 
 Default value: `'present'`
 
-##### <a name="manage_service"></a>`manage_service`
+##### <a name="-lldpd--manage_service"></a>`manage_service`
 
 Data type: `Boolean`
 
 Enable or disable the service management
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="manage_repo"></a>`manage_repo`
+##### <a name="-lldpd--manage_repo"></a>`manage_repo`
 
 Data type: `Boolean`
 
 Enable or disable the repository setup
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="repourl"></a>`repourl`
+##### <a name="-lldpd--repourl"></a>`repourl`
 
 Data type: `Optional[String[1]]`
 
 String that completes the url for the upstream repository
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="apt_key_hash"></a>`apt_key_hash`
+##### <a name="-lldpd--apt_key_hash"></a>`apt_key_hash`
 
 Data type: `String[1]`
 
