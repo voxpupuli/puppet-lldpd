@@ -170,7 +170,17 @@ describe Facter::Util::Fact.to_s do
 
   context 'lldpctl not in path' do
     before do
+      allow(File).to receive(:exist?).with('/run/lldpd/lldpd.socket').and_return(true)
       allow(Facter::Util::Resolution).to receive(:which).with('lldpctl').and_return(nil)
+    end
+
+    it { expect(Facter.fact(:lldp).value).to eq(nil) }
+  end
+
+  context 'lldpd not running' do
+    before do
+      allow(File).to receive(:exist?).with('/run/lldpd/lldpd.socket').and_return(false)
+      allow(Facter::Util::Resolution).to receive(:which).with('lldpctl').and_return('/usr/sbin/lldpctl')
     end
 
     it { expect(Facter.fact(:lldp).value).to eq(nil) }
@@ -178,6 +188,7 @@ describe Facter::Util::Fact.to_s do
 
   context 'valid run' do
     before do
+      allow(File).to receive(:exist?).with('/run/lldpd/lldpd.socket').and_return(true)
       allow(Facter::Util::Resolution).to receive(:which).with('lldpctl').and_return('/usr/sbin/lldpctl')
     end
 
