@@ -7,7 +7,8 @@ class MalformedDataError < StandardError; end
 
 Facter.add(:lldp) do
   confine do
-    Facter::Util::Resolution.which('lldpctl')
+    Facter::Util::Resolution.which('lldpctl') &&
+      File.exist?('/run/lldpd/lldpd.socket')
   end
 
   setcode do
