@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v6.0.0](https://github.com/voxpupuli/puppet-lldpd/tree/v6.0.0) (2023-10-04)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v5.1.0...v6.0.0)
+
+**Breaking changes:**
+
+- Drop EoL Ubuntu 16.04 support [\#159](https://github.com/voxpupuli/puppet-lldpd/pull/159) ([bastelfreak](https://github.com/bastelfreak))
+- Drop EoL Debian 9 support [\#158](https://github.com/voxpupuli/puppet-lldpd/pull/158) ([bastelfreak](https://github.com/bastelfreak))
+- Drop Puppet 6 support [\#151](https://github.com/voxpupuli/puppet-lldpd/pull/151) ([bastelfreak](https://github.com/bastelfreak))
+
+**Implemented enhancements:**
+
+- puppet/systemd: Allow 5.x & 6.x [\#161](https://github.com/voxpupuli/puppet-lldpd/pull/161) ([bastelfreak](https://github.com/bastelfreak))
+- Add Ubuntu 22.04 support [\#160](https://github.com/voxpupuli/puppet-lldpd/pull/160) ([bastelfreak](https://github.com/bastelfreak))
+- Add Puppet 8 support [\#156](https://github.com/voxpupuli/puppet-lldpd/pull/156) ([bastelfreak](https://github.com/bastelfreak))
+- puppetlabs/stdlib: Allow 9.x [\#155](https://github.com/voxpupuli/puppet-lldpd/pull/155) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [v5.1.0](https://github.com/voxpupuli/puppet-lldpd/tree/v5.1.0) (2023-01-27)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v5.0.0...v5.1.0)
