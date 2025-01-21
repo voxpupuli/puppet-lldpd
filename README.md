@@ -13,7 +13,6 @@
 
 * [Overview](#overview)
 * [Setup](#setup)
-* [Support](#support)
 * [Reference](#reference)
 * [Limitations](#limitations)
 * [Development](#development)
@@ -50,28 +49,6 @@ class{'lldpd':
   manage_repo => false,
 }
 ```
-
-## Support
-
-This module supports the installation on:
-
-* Archlinux
-* CentOS 7
-* Fedora 32
-* Debian 9
-* Debian 10
-* Ubuntu 16.04
-* Ubuntu 18.04
-* Ubuntu 20.04
-* VirtuozzoLinux 7
-* FreeBSD 11
-* FreeBSD 12
-
-The fact is present on all Operating Systems except for FreeBSD. Docker
-acceptance tests work for CentOS 6 and 7. Vagrant acceptance tests work for
-Fedora 25. Other nodesets are currently not present. The module requires at
-least Puppet 4.9.4 (this is the first version with proper data-in-modules
-support).
 
 ## Development
 
