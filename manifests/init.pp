@@ -9,13 +9,13 @@
 # @param manage_service Enable or disable the service management
 # @param manage_repo Enable or disable the repository setup
 # @param repourl String that completes the url for the upstream repository
-# @param apt_key_hash the sha256 hashsum for the GPG key file that was used to sign the packages
+# @param apt_key the public key used to sign the apt repository (default loaded from hiera)
 class lldpd (
   Enum['present', 'absent', 'latest'] $ensure            = 'present',
   Boolean                             $manage_repo       = false,
   Boolean                             $manage_service    = true,
   Optional[String[1]]                 $repourl           = undef,
-  String[1]                           $apt_key_hash      = '4f9e668fbdaaedf4fc8d83f4eb98db33553d7f4e1f0bca212d0a7ccc9f1a6adf',
+  Optional[String[1]]                 $apt_key           = undef,
 ) {
   if $manage_repo {
     case $facts['os']['family'] {
@@ -29,43 +29,43 @@ class lldpd (
         }
       }
       'Debian': {
-        # place the key in the keyrings directory where apt won't search for keys for all repos
-        # ascii encoded files need to end with *.asc, binary files with .gpg...
-        file { '/usr/share/keyrings/lldpd.asc':
-          ensure         => 'file',
-          source         => "https://download.opensuse.org/repositories/home:/vbernat/${repourl}/Release.key",
-          owner          => 'root',
-          group          => 'root',
-          mode           => '0644',
-          checksum_value => $apt_key_hash,
-          checksum       => 'sha256',
-        }
-        # purge old key files that we installed in previous releases
-        file { ['/etc/apt/trusted.gpg.d/home_vbernat.gpg', '/etc/apt/trusted.gpg.d/home_vbernat.gpg~']:
-          ensure => absent,
-        }
-
-        # previously managed by apt::key, we need to purge it from the global keyring in /etc/apt/trusted.gpg
         include apt # required so apt::key can access variables from init.pp
+
+        # Get rid of all the different old keys
+        file { [
+            '/etc/apt/trusted.gpg.d/home_vbernat.gpg',
+            '/etc/apt/trusted.gpg.d/home_vbernat.gpg~',
+            '/usr/share/keyrings/lldpd.asc',
+          ]:
+            ensure => absent,
+        }
         apt::key { 'EF795E4D26E48F1D7661267B431C37A97C3E114B':
           ensure => 'absent',
         }
+
+        # Configure source and key
         apt::source { 'lldpd':
           location => "https://download.opensuse.org/repositories/home:/vbernat/${repourl}",
           release  => ' ',
           repos    => '/',
-          keyring  => '/usr/share/keyrings/lldpd.asc',
+          key      => {
+            name    => 'lldpd',
+            content => $apt_key,
+          },
           require  => File['/usr/share/keyrings/lldpd.asc'],
         }
+        Apt::Source['lldpd'] -> Package['lldpd']
       }
       default: {
         warning("`\$manage_repo` not valid for: ${facts['os']['family']}")
       }
     }
   }
+
   package { 'lldpd':
     ensure => $ensure,
   }
+
   if $manage_service {
     service { 'lldpd':
       ensure  => 'running',

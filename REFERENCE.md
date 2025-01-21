@@ -30,7 +30,7 @@ The following parameters are available in the `lldpd` class:
 * [`manage_service`](#-lldpd--manage_service)
 * [`manage_repo`](#-lldpd--manage_repo)
 * [`repourl`](#-lldpd--repourl)
-* [`apt_key_hash`](#-lldpd--apt_key_hash)
+* [`apt_key`](#-lldpd--apt_key)
 
 ##### <a name="-lldpd--ensure"></a>`ensure`
 
@@ -64,11 +64,11 @@ String that completes the url for the upstream repository
 
 Default value: `undef`
 
-##### <a name="-lldpd--apt_key_hash"></a>`apt_key_hash`
+##### <a name="-lldpd--apt_key"></a>`apt_key`
 
-Data type: `String[1]`
+Data type: `Optional[String[1]]`
 
-the sha256 hashsum for the GPG key file that was used to sign the packages
+the public key used to sign the apt repository (default loaded from hiera)
 
-Default value: `'4f9e668fbdaaedf4fc8d83f4eb98db33553d7f4e1f0bca212d0a7ccc9f1a6adf'`
+Default value: `undef`
 
