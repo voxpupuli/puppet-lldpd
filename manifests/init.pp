@@ -27,6 +27,7 @@ class lldpd (
           baseurl  => "https://download.opensuse.org/repositories/home:/vbernat/${repourl}/",
           gpgcheck => 1,
         }
+        Yumrepo['lldpd'] -> Package['lldpd']
       }
       'Debian': {
         include apt # required so apt::key can access variables from init.pp
