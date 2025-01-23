@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v7.0.0](https://github.com/voxpupuli/puppet-lldpd/tree/v7.0.0) (2025-01-23)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v6.1.0...v7.0.0)
+
+**Breaking changes:**
+
+- Update APT GPG Key and ensure apt::source is before package [\#175](https://github.com/voxpupuli/puppet-lldpd/pull/175) ([yakatz](https://github.com/yakatz))
+
+**Implemented enhancements:**
+
+- Ensure yumrepo is always before package [\#177](https://github.com/voxpupuli/puppet-lldpd/pull/177) ([yakatz](https://github.com/yakatz))
+- Add Debian 12 and Ubuntu 24.04 [\#176](https://github.com/voxpupuli/puppet-lldpd/pull/176) ([yakatz](https://github.com/yakatz))
+
+**Merged pull requests:**
+
+- puppet/systemd: allow 8.x [\#174](https://github.com/voxpupuli/puppet-lldpd/pull/174) ([jay7x](https://github.com/jay7x))
+
 ## [v6.1.0](https://github.com/voxpupuli/puppet-lldpd/tree/v6.1.0) (2024-09-09)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v6.0.0...v6.1.0)
