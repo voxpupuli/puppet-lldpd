@@ -14,16 +14,17 @@ Facter.add(:lldp) do
     fact_data = {}
     begin
       data = Facter::Util::Resolution.exec('lldpctl -f json')
-      json = JSON.parse(data).fetch('lldp', {}).fetch('interface', [])
-      raise MalformedDataError, 'no lldp interface data found' if json.empty?
+      json = JSON.parse(data)['lldp']
+      raise MalformedDataError, 'no lldp data found' if json.nil?
 
-      fact_data['interfaces'] = {}
+      interfaces = json.fetch('interface', [])
       # if lldp detects only a single interface, we get a hash with data for that interface
       # for multiple interfaces we get an array with one hash
-      if json.instance_of?(Hash)
-        fact_data['interfaces'] = json
+      if interfaces.is_a?(Hash)
+        fact_data['interfaces'] = interfaces
       else
-        json.each do |iface_h|
+        fact_data['interfaces'] = {}
+        interfaces.each do |iface_h|
           ifaces = iface_h.keys
           raise MalformedDataError, 'expected exactly one key per interface object' unless ifaces.size == 1
 
