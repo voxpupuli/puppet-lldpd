@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v7.1.0](https://github.com/voxpupuli/puppet-lldpd/tree/v7.1.0) (2025-04-05)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v7.0.0...v7.1.0)
+
+**Implemented enhancements:**
+
+- \(metadata.json\) Bump APT dependency to include 10.x [\#183](https://github.com/voxpupuli/puppet-lldpd/pull/183) ([badenerb](https://github.com/badenerb))
+- metadata.json: Add OpenVox [\#182](https://github.com/voxpupuli/puppet-lldpd/pull/182) ([jstraw](https://github.com/jstraw))
+
 ## [v7.0.0](https://github.com/voxpupuli/puppet-lldpd/tree/v7.0.0) (2025-01-23)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v6.1.0...v7.0.0)
