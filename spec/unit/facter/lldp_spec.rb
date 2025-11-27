@@ -110,6 +110,14 @@ command_output2 = <<~STDOUT2
   }
 
 STDOUT2
+command_output3 = <<~STDOUT3
+  {
+    "lldp": {
+
+    }
+  }
+
+STDOUT3
 fact_result1 = {
   'interfaces' => {
     'eno1' => {
@@ -164,6 +172,7 @@ fact_result1 = {
 #   value = `lldpctl -f json`
 #   puts JSON.parse(value)
 fact_result2 = { 'interfaces' => { 'enp3s0' => { 'via' => 'LLDP', 'rid' => '1', 'age' => '0 day, 01:01:52', 'chassis' => { 'id' => { 'type' => 'mac', 'value' => '44:94:fc:9d:55:0a' }, 'mgmt-ip' => '192.168.178.21', 'mgmt-iface' => '51' }, 'port' => { 'id' => { 'type' => 'local', 'value' => 'g17' }, 'ttl' => '120' } } } }
+fact_result3 = { 'interfaces' => {} }
 
 describe Facter::Util::Fact.to_s do
   before { Facter.clear }
@@ -195,6 +204,14 @@ describe Facter::Util::Fact.to_s do
       end
 
       it { expect(Facter.fact(:lldp).value).to eq fact_result2 }
+    end
+
+    context 'no interface' do
+      before do
+        allow(Facter::Util::Resolution).to receive(:exec).with('lldpctl -f json') { command_output3 }
+      end
+
+      it { expect(Facter.fact(:lldp).value).to eq fact_result3 }
     end
   end
 end
