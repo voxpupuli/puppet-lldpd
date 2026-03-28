@@ -118,46 +118,46 @@ fact_result1 = {
         'router' => {
           'capability' => [
             { 'enabled' => true, 'type' => 'Bridge' },
-            { 'enabled' => true, 'type' => 'Router' }
+            { 'enabled' => true, 'type' => 'Router' },
           ],
           'descr' => 'example router',
-          'id' => { 'type' => 'mac', 'value' => '10:0e:7e:aa:aa:aa' }, 'mgmt-ip' => '192.0.2.1'
-        }
+          'id' => { 'type' => 'mac', 'value' => '10:0e:7e:aa:aa:aa' }, 'mgmt-ip' => '192.0.2.1',
+        },
       },
       'lldp-med' => {
         'capability' => [
           { 'available' => true, 'type' => 'Capabilities' },
           { 'available' => true, 'type' => 'Policy' },
           { 'available' => true, 'type' => 'Location' },
-          { 'available' => true, 'type' => 'MDI/PSE' }
+          { 'available' => true, 'type' => 'MDI/PSE' },
         ],
-        'device-type' => 'Network Connectivity Device'
+        'device-type' => 'Network Connectivity Device',
       },
       'port' => {
         'auto-negotiation' => {
           'advertised' => {
             'fd' => true,
             'hd' => false,
-            'type' => '1000Base-T'
+            'type' => '1000Base-T',
           },
           'current' => 'unknown',
           'enabled' => true,
-          'supported' => true
+          'supported' => true,
         },
         'descr' => 'host:eno1 {#}',
         'id' => {
           'type' => 'ifname',
-          'value' => 'ge-1/0/1'
+          'value' => 'ge-1/0/1',
         },
         'mfs' => '9192',
-        'ttl' => '120'
+        'ttl' => '120',
       },
       'rid' => '1',
       'via' => 'LLDP',
       'vlan' =>
-      { 'pvid' => true, 'value' => 'vlan-42', 'vlan-id' => '42' }
-    }
-  }
+      { 'pvid' => true, 'value' => 'vlan-42', 'vlan-id' => '42' },
+    },
+  },
 }
 # to create it:
 #   require 'json'
@@ -189,7 +189,7 @@ describe Facter::Util::Fact.to_s do
       it { expect(Facter.fact(:lldp).value).to eq fact_result1 }
     end
 
-    context 'valid single interface' do  # https://github.com/voxpupuli/puppet-lldpd/issues/129
+    context 'valid single interface' do # https://github.com/voxpupuli/puppet-lldpd/issues/129
       before do
         allow(Facter::Util::Resolution).to receive(:exec).with('lldpctl -f json') { command_output2 }
       end
