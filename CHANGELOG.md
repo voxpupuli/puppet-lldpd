@@ -4,7 +4,21 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v7.1.0](https://github.com/voxpupuli/puppet-lldpd/tree/v7.1.0) (2025-04-05)
+## [v8.0.0](https://github.com/voxpupuli/puppet-lldpd/tree/v8.0.0) (2026-10-28)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v7.1.0...v8.0.0)
+
+**Breaking changes:**
+
+- Drop puppet, update openvox minimum version to 8.19 [\#188](https://github.com/voxpupuli/puppet-lldpd/pull/188) ([TheMeier](https://github.com/TheMeier))
+
+**Implemented enhancements:**
+
+- puppet/systemd: Allow 11.x [\#199](https://github.com/voxpupuli/puppet-lldpd/pull/199) ([bastelfreak](https://github.com/bastelfreak))
+- Update requirements to allow OpenVox 9 [\#198](https://github.com/voxpupuli/puppet-lldpd/pull/198) ([sebastianrakel](https://github.com/sebastianrakel))
+- replace deprecated calls with Facter::Core::Execution [\#196](https://github.com/voxpupuli/puppet-lldpd/pull/196) ([corporate-gadfly](https://github.com/corporate-gadfly))
+
+## [v7.1.0](https://github.com/voxpupuli/puppet-lldpd/tree/v7.1.0) (2025-04-06)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lldpd/compare/v7.0.0...v7.1.0)
 
