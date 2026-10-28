@@ -71,4 +71,3 @@ Data type: `Optional[String[1]]`
 the public key used to sign the apt repository (default loaded from hiera)
 
 Default value: `undef`
-
